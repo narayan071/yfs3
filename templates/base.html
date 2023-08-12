@@ -1,1 +1,81 @@
 {% comment %} this is base html to be included in all other pages (include {% extends 'base.html' %} in all other files){% endcomment %}
+{% load static %}
+<header id="header" class="on-top{% if request.resolver_match.url_name == 'home' %} home{% endif %}" >
+    <a href="{% url 'home' %}" style="cursor: pointer">
+        <span id="nav-logo">
+            <img src="{% static 'img/main-logo.png' %}" alt="logo" />
+        </span>
+    </a>
+    <i class="fas fa-bars" id="nav-toggle" style="font-size: 1.5em; margin-right: 1em;"></i>
+    <nav id="navbar">
+        <ul id="nav-list">
+            <a class="nav-links" href="{% url 'home' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'home' %} active{% endif %}">
+                <i class="fas fa-home menu-icon"></i>
+                    Home
+                </li>
+            </a>
+            <a class="nav-links" href="{% url 'events-home' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'events-home' %} active{% endif %}">
+                <i class="fas fa-calendar menu-icon"></i>
+                    Events
+                </li>
+            </a>
+            <a class="nav-links" href="{% url 'allblogs' %}">
+                <li
+                class="nav-item{% if request.resolver_match.url_name == 'allblogs' or request.resolver_match.url_name == 'detailedblog' %} active{% endif %}">
+                <i class="fas fa-blog menu-icon"></i>
+                    Blog
+                </li>
+            </a>
+            <a class="nav-links" href="{% url 'joinus' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'joinus' %} active{% endif %}">
+                <i class="fas fa-store menu-icon"></i>
+                    Join Us
+                </li>
+            </a>
+            <a class="nav-links" href="{% url 'contact' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'contact' %} active{% endif %}">
+                <i class="fas fa-address-book menu-icon"></i>
+                    Contact Us
+                </li>
+            </a>
+            <a class="nav-links" href="{% url 'feedback' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'feedback' %} active{% endif %}">
+                <i class="fas fa-comments menu-icon"></i>
+                    Feedback
+                </li>
+            </a>
+            {% if not request.user.is_authenticated %}
+            <a class="nav-links" href="{% url 'register' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'register' %} active{% endif %}">
+                <i class="fas fa-user menu-icon"></i>
+                    Sign Up
+                </li>
+            </a>
+            <a class="nav-links login-nav" href="{% url 'login' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'login' %} active{% endif %}">
+                <i class="fas fa-sign-in-alt menu-icon"></i>
+                    Log in
+                </li>
+            </a>
+            {% else %}
+            <a class="nav-links" href="{% url 'profile' %}">
+            <li class="nav-item{% if request.resolver_match.url_name == 'profile' %} active{% endif %}">
+                <i class="fas fa-user menu-icon"></i>
+                    Profile
+                </li>
+            </a>
+            <a class="nav-links logout-nav" href="{% url 'account_logout' %}">
+                <li class="nav-item{% if request.resolver_match.url_name == 'login' %} active{% endif %}">
+                        Logout
+                        <i class="fas fa-sign-out-alt menu-icon"></i>
+                    </li>
+                </a>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<script>
+
+</script>
