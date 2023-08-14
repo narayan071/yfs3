@@ -4,7 +4,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 footer {
   background-color: #0b0704;
   color: whitesmoke;
@@ -20,6 +19,12 @@ footer {
       grid-template-areas: "logo links subscription"
  "socials links subscription"
  "copyright copyright copyright";
+ position: sticky;
+ top: 100%;
+}
+
+body{
+    min-height: 100vh;
 }
 
 footer #logo {
