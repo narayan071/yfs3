@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+footer {
+  background-color: #0b0704;
+  color: whitesmoke;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  gap: 20px;
+  padding: 5rem 2.5rem;
+  padding-bottom: 1rem;
+  padding-right: 5rem;
+  -ms-grid-columns: 1fr 2fr 2fr;
+      grid-template-columns: 1fr 2fr 2fr;
+      grid-template-areas: "logo links subscription"
+ "socials links subscription"
+ "copyright copyright copyright";
+}
+
+footer #logo {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  grid-area: logo;
+  place-self: center;
+}
+
+footer #logo img {
+  width: 200px;
+}
+
+footer #socials {
+  grid-row: 2 / span 2;
+  grid-column: 1 / span 1;
+  grid-area: socials;
+  text-align: center;
+}
+
+footer #socials p {
+  margin-bottom: 1em;
+}
+
+footer #socials .social-icons {
+  font-size: 28px;
+  text-align: center;
+  margin-right: 12px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+footer #socials .fa-facebook:hover {
+  color: #3b5998;
+}
+
+footer #socials .fa-linkedin:hover {
+  color: #0e76a8;
+}
+
+footer #socials .fa-instagram:hover {
+  color: #8a3ab9;
+}
+
+footer #socials .fa-twitter:hover {
+  color: dodgerblue;
+}
+
+footer #links {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: links;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer #links div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+footer #links p {
+  font-size: 1.25em;
+  justify-self: flex-start;
+}
+
+footer #links ul {
+  list-style: none;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 0 !important;
+  padding: 0;
+}
+
+footer #links a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+footer #links a:hover {
+  color: white;
+}
+
+footer #subscription {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: subscription;
+  width: 100%;
+}
+
+footer #subscription p {
+  font-size: 2em;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  width: 100%;
+}
+
+footer #subscription form {
+  margin-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  gap: 0.5rem;
+}
+
+footer #subscription form #email {
+  height: 3.25rem;
+  background: none;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  padding: 0.25em 0.5em;
+  color: white;
+  font-size: 1em;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+footer #subscription form #email:focus {
+  border: 1px solid white;
+}
+
+footer #subscription form #subscribe {
+  font-size: 1.2em;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+footer #subscription form #subscribe:hover {
+  -webkit-box-shadow: 0 0 0.25em 0.15em rgba(255, 255, 255, 0.6);
+          box-shadow: 0 0 0.25em 0.15em rgba(255, 255, 255, 0.6);
+}
+
+footer #copyright {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: copyright;
+  margin-top: 2.5rem;
+  width: 100%;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+@media screen and (max-width: 991px) {
+  footer {
+    padding: 1em 1em;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 40px;
+        grid-template-areas: "logo"
+ "links"
+ "subscription"
+ "socials"
+ "copyright";
+  }
+  footer #subscription {
+    width: 100%;
+    padding: 0 2em;
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+  footer #subscription p {
+    font-size: 1em;
+    text-align: center;
+  }
+  footer #subscription form {
+    height: 1em;
+  }
+  footer #subscription form #subscribe {
+    font-size: 0.75em;
+  }
+  footer #socials i {
+    margin-right: 0.5em;
+  }
+  footer #copyright {
+    margin-top: 0em;
+    font-size: small;
+  }
+}
