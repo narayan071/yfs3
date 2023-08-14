@@ -1,81 +1,115 @@
 {% comment %} this is base html to be included in all other pages (include {% extends 'base.html' %} in all other files){% endcomment %}
 {% load static %}
-<header id="header" class="on-top{% if request.resolver_match.url_name == 'home' %} home{% endif %}" >
-    <a href="{% url 'home' %}" style="cursor: pointer">
-        <span id="nav-logo">
-            <img src="{% static 'img/main-logo.png' %}" alt="logo" />
-        </span>
-    </a>
-    <i class="fas fa-bars" id="nav-toggle" style="font-size: 1.5em; margin-right: 1em;"></i>
-    <nav id="navbar">
-        <ul id="nav-list">
-            <a class="nav-links" href="{% url 'home' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'home' %} active{% endif %}">
-                <i class="fas fa-home menu-icon"></i>
-                    Home
-                </li>
-            </a>
-            <a class="nav-links" href="{% url 'events-home' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'events-home' %} active{% endif %}">
-                <i class="fas fa-calendar menu-icon"></i>
-                    Events
-                </li>
-            </a>
-            <a class="nav-links" href="{% url 'allblogs' %}">
-                <li
-                class="nav-item{% if request.resolver_match.url_name == 'allblogs' or request.resolver_match.url_name == 'detailedblog' %} active{% endif %}">
-                <i class="fas fa-blog menu-icon"></i>
-                    Blog
-                </li>
-            </a>
-            <a class="nav-links" href="{% url 'joinus' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'joinus' %} active{% endif %}">
-                <i class="fas fa-store menu-icon"></i>
-                    Join Us
-                </li>
-            </a>
-            <a class="nav-links" href="{% url 'contact' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'contact' %} active{% endif %}">
-                <i class="fas fa-address-book menu-icon"></i>
-                    Contact Us
-                </li>
-            </a>
-            <a class="nav-links" href="{% url 'feedback' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'feedback' %} active{% endif %}">
-                <i class="fas fa-comments menu-icon"></i>
-                    Feedback
-                </li>
-            </a>
-            {% if not request.user.is_authenticated %}
-            <a class="nav-links" href="{% url 'register' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'register' %} active{% endif %}">
-                <i class="fas fa-user menu-icon"></i>
-                    Sign Up
-                </li>
-            </a>
-            <a class="nav-links login-nav" href="{% url 'login' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'login' %} active{% endif %}">
-                <i class="fas fa-sign-in-alt menu-icon"></i>
-                    Log in
-                </li>
-            </a>
-            {% else %}
-            <a class="nav-links" href="{% url 'profile' %}">
-            <li class="nav-item{% if request.resolver_match.url_name == 'profile' %} active{% endif %}">
-                <i class="fas fa-user menu-icon"></i>
-                    Profile
-                </li>
-            </a>
-            <a class="nav-links logout-nav" href="{% url 'account_logout' %}">
-                <li class="nav-item{% if request.resolver_match.url_name == 'login' %} active{% endif %}">
-                        Logout
-                        <i class="fas fa-sign-out-alt menu-icon"></i>
-                    </li>
-                </a>
-            {% endif %}
-        </ul>
-    </nav>
-</header>
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>YFS || {{pname}}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body class="body">
+    <nav class="navbar navbar-expand-lg py-0">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bolder" style="color:rgb(71, 68, 68);" href="/"><img src="{% static 'images/main-logo.png' %}" alt="logo"></a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" style = "height:100%" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100">
+              <li class="nav-item" style="height: 100%;">
+                <a class="nav-link mx-1" aria-current="page" style="padding-top:auto; padding-bottom:auto;" href="{% url 'home' %}">Home</a>
+              </li>
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="/">Events</a>
+              </li>
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="/">Blog</a>
+              </li>
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="/">Join us</a>
+              </li>
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="/">Contact us</a>
+              </li>
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="/">Feedback</a>
+              </li>
 
-</script>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    {% block content %}
+    
+    
+    {% endblock content %}
+
+    <footer>
+      <div id="logo">
+        <img
+          src="{% static 'images/main-logo.png' %}"
+          alt="footer-logo"
+          class="footer-logo"
+        />
+      </div>
+      <div id="socials">
+        <p class="social-desc">Connect for more updates</p>
+        <i class="social-icons fab fa-facebook"></i>
+        <i class="social-icons fab fa-linkedin"></i>
+        <i class="social-icons fab fa-instagram"></i>
+        <i class="social-icons fab fa-twitter"></i>
+      </div>
+      <div id="links">
+        <div class="explore">
+          <p>Explore</p>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">What we do</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="more">
+          <p>More</p>
+          <ul>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Donate</a></li>
+          </ul>
+        </div>
+        <div class="support">
+          <p>Support</p>
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="subscription">
+        <p>Subscribe to get the latest updates</p>
+        <form action="/mailing-list" method="POST">
+          {% csrf_token %}
+          <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your email"
+          />
+          <input type="submit" value="Subscribe" id="subscribe" />
+        </form>
+      </div>
+      <div id="copyright">
+        <p align="center">
+          All Content © Youth for substainability 2021 . All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
