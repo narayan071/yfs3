@@ -1,0 +1,226 @@
+.landing-page-main {
+    background-position: 40%;
+    background-size: cover;
+  }
+  .landing-page-contents {
+    padding: 0 2rem;
+    width: 100%;
+  }
+  .landing-page-top-content {
+    height: 85%;
+  }
+  
+  .landing-btn {
+    font-size: 1em;
+    /* padding: 0em; */
+    padding: 0.5em 1em;
+  }
+  
+  .top-content-group > h1 {
+    text-align: center;
+  }
+  
+  .landing-button-group {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 1rem;
+    /* outline: 1px solid white; */
+    width: 100%;
+  }
+  
+  #secondary-cta {
+    padding: 0;
+    font-size: 1.2em;
+  }
+  
+  #secondary-cta > i {
+    font-size: 1.2em;
+    margin-right: 5px;
+    margin-left: 0;
+  }
+  
+  #secondary-cta > a {
+    font-size: 0.9em;
+  }
+  
+  .landing-page-bottom-content {
+    font-size: 0.75rem;
+    /* outline: 1px solid white; */
+  }
+  
+  .know-about-us-main {
+    height: auto;
+    outline: none;
+  }
+  
+  .know-about-us-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .about-us-content {
+    margin: 0;
+    width: calc(100% - 45px);
+  }
+  
+  .about-us-content > h1 {
+    text-align: center;
+  }
+  
+  .about-us-title {
+    left: -10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--secondary-color);
+  }
+  
+  .about-us-title > h3 {
+    font-size: 1em;
+  }
+  
+  .about-us-title hr {
+    display: none;
+  }
+  
+  .know-about-us-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    outline: none;
+  }
+  
+  .know-about-us-video {
+    margin: 2rem 0;
+  }
+  
+  .projects-done-block {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
+  }
+  
+  .projects-done-block > .know-about-us-content > .about-us-content > h1 {
+    width: 100%;
+  }
+  
+  .projects-card-block {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .card {
+    width: 100%;
+  }
+  
+  .card-body {
+    width: 70%;
+    height: 100%;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  
+  .card-body > h3 {
+    font-size: 4vh;
+  }
+  
+  .card-body > p {
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 6vh;
+    color: white;
+  }
+  
+  .card-body > a {
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+  
+  .dono-info-body{
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .dono-info-text h1 {
+    text-align: center;
+  }
+  
+  .dono-subtext {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dono-details {
+    width: 100%;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 1rem;
+  }
+  
+  .join-us{
+    margin: 4rem 1rem;
+    /* margin-top: 4rem; */
+    padding: 2rem;
+    height: 50vh;
+  }
+  
+  .join-us-text {
+    width: 100%;
+  }
+  
+  .join-us-cta button {
+    font-size: 1rem;
+  }
+  
+  
+  .blog-list {
+    flex-direction: column;
+  }
+  .blog-list .blog-card {
+    width: 100%;
+  }
+  .read-blog-title::after {
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+  }
