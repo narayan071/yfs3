@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}YfS | Blog Post{% endblock title %}</title>
+{% block links %}
+<link rel="stylesheet" href="{% static '/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/blog-post.css' %}">
+{% endblock links %}
+
+{% comment %} Blog post starts {% endcomment %}
+{% block content %}
+<article class="container post-wrap">
+    <div class="about-us-title">
+        <hr />
+        <h3 align="center" >Our Blog</h3>
+    </div>
+    <div class="blog-body">
+        <h1 class="blog-title">{{blog.title}}</h1>
+        <div class="author-info">
+            <div class="sub-info">
+                <h2 class="name">
+                    @{{blog.author.username}}
+                </h2>
+                <p id="time-published">{{blog.uploaded_at | date:'d-M-Y'}}&#8226;<span id="read-time"></span> min read</p>
+            </div>
+            <div class="author-socials">
+                <table>
+                    <tr>
+                        <td>
+                            <i class="fab fa-facebook"></i>
+                        </td>
+                        <td>
+                            <i class="fab fa-twitter"></i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="blog-text">
+            {{blog.body | safe}}
+        </div>
+    </div>
+</article>
+<script>
+    var readTime = {{blog.body | wordcount}} / 200;
+    document.getElementById("read-time").innerHTML = Math.round(readTime);
+</script>
+{% endblock content %}
