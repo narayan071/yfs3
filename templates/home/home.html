@@ -1,2 +1,440 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %}
+{% block links %}
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="{% static 'css/home/home.css' %}" />
+<link
+  rel="stylesheet"
+  media="screen and (max-width: 900px)"
+  href="{% static 'css/home/responsive-home.css' %}"
+/>
+
+{% endblock links %}
+<!-- this is start of landing page -->
+{% block content %}
+
+<div class="landing-page-main">
+  <div class="landing-page-contents">
+    <div class="landing-page-top-content">
+      <div class="top-content-group">
+        <h1>
+          BE THE CHANGE YOU <br />
+          WANT TO SEE
+        </h1>
+        <div class="landing-button-group">
+          <a href="#ourMission" class="landing-btn">WHAT WE DO</a>
+          <span id="secondary-cta">
+            <i class="fas fa-money-check"></i>
+            <a href="https://google.com" target="_blank" rel="noreferrer"
+              >Donate Here</a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="landing-page-bottom-content">
+      <h3>100+<br />tress planted</h3>
+      <hr />
+      <h3>
+        5840 <br />
+        donations collected
+      </h3>
+    </div>
+  </div>
+</div>
+<!-- this is end of landing page -->
+<!-- this is trusted Companies start -->
+{% comment %} <div class="trusted-companies-main">
+  <h2>Trusted by 5,000+ Companies Worldwide</h2>
+  <div class="trusted-companies-group">
+    <div class="logos">
+      <img src="{% static 'img/logo (2).png' %}" alt="" />
+    </div>
+    <div class="logos">
+      <img src="{% static 'img/logo (2).png' %}" alt="" />
+    </div>
+    <div class="logos">
+      <img src="{% static 'img/logo (2).png' %}" alt="" />
+    </div>
+    <div class="logos">
+      <img src="{% static 'img/logo (2).png' %}" alt="" />
+    </div>
+    <div class="logos">
+      <img src="{% static 'img/logo (2).png' %}" alt="" />
+    </div>
+    <div class="logos">
+      <img src="{% static 'img/logo (2).png' %}" alt="" />
+    </div>
+  </div>
+</div> {% endcomment %}
+
+
+<!-- this is end of trusted Companies section -->
+<!-- this is a start of about us -->
+<div class="know-about-us-main h-100">
+  <div class="know-about-us-block">
+    <div class="know-about-us-content">
+      <div class="about-us-title">
+        <hr />
+        <h3>KNOW ABOUT US</h3>
+      </div>
+      <div class="about-us-content">
+        <h1>We help nature smile and survive everywhere</h1>
+        <p>
+          With our numerous project initiatives, we create impact through groundwork. We make sure our projects cover varied areas and issues while being in line with our motto.
+        </p>
+        <h2>How You Can Help?</h2>
+        <p>
+          Everyone has the opportunity to contribute in their own ways. Why not start by donating to keep the cause alive?
+        </p>
+        <button class="landing-btn donate">DONATE NOW</button>
+      </div>
+    </div>
+    <!-- <div class="know-about-us-video"> -->
+    <img
+      class="know-about-us-video"
+      src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1885&q=80"
+      alt="nature-people"
+    />
+    <!-- </div> -->
+  </div>
+</div>
+
+<div class="container">
+  <div class="row py-5">
+    <div class="col-md-3 col-sm-6 ctr-card">
+      <div class="counter">
+        <div class="counter-icon">
+          <i class="fab fa-pagelines"></i>
+        </div>
+        <h3>Trees Planted</h3>
+        <span class="counter-value">157</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 ctr-card">
+      <div class="counter pink">
+        <div class="counter-icon">
+          <i class="fa fa-leaf"></i>
+        </div>
+        <h3>Beaches Cleaned</h3>
+        <span class="counter-value">4</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 ctr-card">
+      <div class="counter">
+        <div class="counter-icon">
+          <i class="fa fa-project-diagram"></i>
+        </div>
+        <h3>Projects Done</h3>
+        <span class="counter-value">25</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 ctr-card">
+      <div class="counter pink">
+        <div class="counter-icon">
+          <i class="fa fa-globe"></i>
+        </div>
+        <h3>Tonnes of plastic recycled</h3>
+        <span class="counter-value">250</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- this is a end of about us -->
+<div class="know-about-us-main what-do-we-do" style="background-color: #fbfbfb; height: auto;" id="ourMission">
+  <div class="know-about-us-block">
+    <div class="know-about-us-content">
+      <div class="about-us-title">
+        <hr />
+        <h3>OUR MISSION</h3>
+      </div>
+      <div class="about-us-content">
+        <h1>We care for earth, care for the coming birth</h1>
+        <p class="point-content-main-para">
+          In theory, environment and nature may not be the first priority when economic development and profit-making companies seek so much attention. So, our mission is to integrate with businesses, corporates, and educational institutions to work for Sustainable Development. We aim to have 500 single-use plastic-free campuses by 2025 and integrate 100 businesses in order to instigate a cultural and habitual change in every individual to implement and practice methods of Sustainable Living.
+        </p>
+        <div class="points-what-we-do">
+          <div class="points-group">
+            <div class="grp-1">
+              <div class="icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="point-content">
+                <h3>Build Healthy Cities</h3>
+                <p>
+                  We aim to promote and imply the motto to reduce the usage and reuse resources. We not only look forward to create sustainable individuals but incorporate the same into the ways of our society and make sustainability a functioning reality in our day to day lives.
+                </p>
+              </div>
+            </div>
+            <div class="grp-1">
+              <div class="icon">
+                <i class="fas fa-tree"></i>
+              </div>
+              <div class="point-content">
+                <h3>Tree Plantation</h3>
+                <p>
+                  It is no secret that a huge number of trees are being cut down everyday. And the rate of replenishment is not equal to the rate of felling. Hence, by periodically planting trees, we contribute in reducing this imbalance and make nature greener.
+                </p>
+              </div>
+            </div>
+            <div class="grp-1">
+              <div class="icon">
+                <i class="fas fa-water"></i>
+              </div>
+              <div class="point-content">
+                <h3>Protect Land and Water</h3>
+                <p>
+                  These two natural resources which cover majority of Earth's area have been and are being depleted and polluted constantly. By organising cleaning drives, awareness campaigns and fundraising events, we redirect our efforts and capital into reviving and healing land and water.
+                </p>
+              </div>
+            </div>
+            <div
+              class="grp-1"
+              style="margin: 0px; margin-bottom: 0px; padding-bottom: 0px"
+            >
+              <div class="icon">
+                <i class="fas fa-dog"></i>
+              </div>
+              <div class="point-content">
+                <h3>Animal Safety</h3>
+                <p>
+                  Over time, we seem to have forgotten that we share this Earth with other living beings who are in need of our steady attention. Collaborating with initiatives which work for animal welfare and safety, we contribute to the well being of our fellow members that we share this planet with.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      src="https://source.unsplash.com/vDs0MCYkfQ4"
+      alt="animal-shelter"
+      class="know-about-us-video"
+    />
+  </div>
+</div>
+<div class="know-about-us-main projects-done" style="background-color: white; padding-top: 50px">
+  <div class="know-about-us-block projects-done-block">
+    <div class="know-about-us-content">
+      <div class="about-us-title">
+        <hr />
+        <h3>WHAT WE DO</h3>
+      </div>
+      <div class="about-us-content">
+        <h1>We are Creating sustainable society, for everyone and forever.</h1>
+      </div>
+    </div>
+    <div class="projects-card-block">
+        <div class="card" style="
+          background:
+          url('{% static 'img/beach_drive.jpg' %}'),
+          linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.6)
+          );
+        ">
+         <div class="card-body">
+          <h3 class="card-title">Beach Cleaning Drives</h3>
+          <p class="card-text">
+            We have a vision to make all major beaches of odisha plastic free. We understand that its a herculean task. But that is not going to stop us from taking the matter into our own hands, literally.
+          </p>
+          <a href="https://www.instagram.com/p/CWC_rWoPWDh/" target="_blank" class="landing-btn donate seemore">See more</a>
+        </div>
+      </div>
+      <div class="card" style="
+        background:
+        url('{% static 'img/field_work.jpg' %}'),
+        linear-gradient(
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.6)
+        );
+      ">
+        <div class="card-body">
+          <h3 class="card-title">Connecting indigenous tribes.</h3>
+          <p class="card-text">
+            YfS actively participates in and conducts major dialogues with several indigenous tribes throughout odisha. We have a aim to connect their sustainable lives with the modern era.
+          </p>
+          <a href="https://www.instagram.com/p/CV2V4Wfr610/" class="landing-btn donate">See more</a>
+        </div>
+      </div>
+      <div class="card" style="
+        background:
+        url('{% static 'img/palm_oil.jpg' %}'),
+        linear-gradient(
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.6)
+        );
+      ">
+        <div class="card-body">
+          <h3 class="card-title">Global Youth Summits</h3>
+          <p class="card-text">
+            With our huge volunteer base, we make sure to educate and create awareness about pressing environmental issues by conductiong international seminars and youth summits.
+          </p>
+          <a href="https://www.instagram.com/p/CWkCcSAKyCx/" target="_blank" class="landing-btn donate">See more</a>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<section id="dono-info" style="height: auto">
+  <div class="dono-info-body">
+    <div class="dono-info-text">
+     <h1>How we spend your donations and where it goes !</h1>
+     <p class="dono-subtext">
+      We understand that when you make a donation, you want to know exactly where your money is going and we pledge to be transparent.
+     </p>
+     <div class="dono-details">
+       <div class="dono-detail">
+          <p>
+           <span style="background: #bef3c0;"></span>
+           40% planting trees
+          </p>
+       </div>
+       <div class="dono-detail">
+          <p>
+           <span style="background: #ac94f1"></span>
+           35% Cleaning Drives
+          </p>
+       </div>
+       <div class="dono-detail">
+          <p>
+           <span style="background: #fff0ca"></span>
+           10% Awareness campaigns
+          </p>
+       </div>
+       <div class="dono-detail">
+          <p>
+           <span style="background: #f9cf64"></span>
+           10% Animal welfare
+          </p>
+       </div>
+       <div class="dono-detail">
+          <p>
+           <span style="background: #f38fbf"></span>
+           5% Donation drives
+          </p>
+       </div>
+     </div>
+    </div>
+    <img src="{% static 'img/Chart.png' %}" alt="donation division  chart" class="dono-info-chart">
+  </div>
+</section>
+<section class="join-us">
+		<div class="join-us-text">
+        You can contribute to make the environment greener!
+    </div>
+		<div class="join-us-cta">
+			<a href="#" class="landing-btn">Join as a volunteer</a>
+      <button class="landing-btn sec"><i class="fas fa-money-check"></i>Donate</button>
+		</div>
+</section>
+
+<section class="read-blog">
+  <h2 class="read-blog-title">
+    <i class="fas fa-link" style="font-size: 28px"></i>
+    Read our latest blog posts 
+  </h2>
+  <div class="blog-list">
+    {% comment %} <div class="blog-card">
+      <div class="blog-image">
+        <img src="/media/blog_images/bish.jpg" alt="Blog image" srcset="">
+      </div>
+      <div class="blog-preview">
+        <h2 class="blog-title">
+          Dummy Blog Title
+        </h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto facilis cumque cupiditate soluta error culpa provident ipsum quasi ipsa expedita!
+      </div>
+    </div> {% endcomment %}
+    {% if blogs.count == 0 %}
+    <div class="container">
+      <h2 align="center">No Blogs Yet. Open an account if you want to contribute</h2>
+      <p align="center" class="mt-4">
+        <a href="{% url 'register' %}" class="btn btn-success btn-lg">Start Now</a>
+      </p>
+    </div>
+    {% else %}
+    {% for blog in blogs %}
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="{{blog.blog_image.url}}" alt="Blog image" srcset="">
+      </div>
+      <div class="blog-preview">
+        <a title="Click to read more." class="blog-title" href="/blogs/detailedblog/{{blog.slug}}">
+          {{blog.title}}
+        </a>
+        {{blog.body|striptags|slice:":50"}}
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% comment %} <div class="blog-card">
+      <div class="blog-image">
+        <img src="https://source.unsplash.com/random" alt="Blog image" srcset="">
+      </div>
+      <div class="blog-preview">
+        <h2 class="blog-title">
+          Dummy Blog Title
+        </h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto facilis cumque cupiditate soluta error culpa provident ipsum quasi ipsa expedita!
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="https://source.unsplash.com/random" alt="Blog image" srcset="">
+      </div>
+      <div class="blog-preview">
+        <h2 class="blog-title">
+          Dummy Blog Title
+        </h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto facilis cumque cupiditate soluta error culpa provident ipsum quasi ipsa expedita!
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="https://source.unsplash.com/random" alt="Blog image" srcset="">
+      </div>
+      <div class="blog-preview">
+        <h2 class="blog-title">
+          Dummy Blog Title
+        </h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto facilis cumque cupiditate soluta error culpa provident ipsum quasi ipsa expedita!
+      </div>
+    </div> {% endcomment %}
+  </div>
+</section>
+<section class="read-blog upcoming-events">
+  <h2 class="read-blog-title events-title">
+    <i class="fas fa-link" style="font-size: 28px"></i>
+    Upcoming Events
+  </h2>
+  <div class="blog-list event-list">
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%230e8932&ctz=Asia%2FKolkata&showTitle=0&showNav=0&showTabs=0&src=cHBxMjk3bWRwdmxrMjB1MTlnam9nczAwYjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%233F51B5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $(".counter-value").each(function () {
+      $(this)
+        .prop("Counter", 0)
+        .animate(
+          {
+            Counter: $(this).text(),
+          },
+          {
+            duration: 3500,
+            easing: "swing",
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+            },
+          }
+        );
+    });
+  });
+</script>
+{% endblock content %}
