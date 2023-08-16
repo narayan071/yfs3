@@ -431,10 +431,18 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+#hero{
   width: 100%;
   height: 89vh;
   background-size: cover;
+  position: relative;
+  background-attachment: fixed !important;
+}
+
+#cta{
+  width: 100%;
+  height: 40vh;
+  background-size:contain;
   position: relative;
   background-attachment: fixed !important;
 }
