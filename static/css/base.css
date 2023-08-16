@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -51,7 +52,7 @@ body{
 
 a {
   text-decoration: none;
-  color: #8fc04e;
+  color: green;
 }
 
 a:hover {
@@ -78,7 +79,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #8fc04e;
+  background: green;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -122,7 +123,7 @@ h6 {
 
 #topbar .contact-info i {
   font-style: normal;
-  color: #8fc04e;
+  color: green;
 }
 
 #topbar .contact-info i a,
@@ -137,7 +138,7 @@ h6 {
 }
 
 #topbar .contact-info i a:hover {
-  color: #8fc04e;
+  color: green;
 }
 
 #topbar .social-links a {
@@ -236,12 +237,12 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #8fc04e;
+  color: green;
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #8fc04e;
+  background: green;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
@@ -289,7 +290,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #8fc04e;
+  color: green;
 }
 
 .navbar .dropdown:hover>ul {
@@ -385,7 +386,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #8fc04e;
+  color: green;
 }
 
 .navbar-mobile .getstarted,
@@ -420,7 +421,7 @@ h6 {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: #8fc04e;
+  color: green;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
@@ -432,15 +433,15 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 60vh;
-  background: url("../img/hero-bg.jpg") top center;
+  height: 89vh;
   background-size: cover;
   position: relative;
+  background-attachment: fixed !important;
 }
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -486,12 +487,12 @@ h6 {
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  border: 2px solid #8fc04e;
+  border: 2px solid green;
   color: #fff;
 }
 
 #hero .btn-get-started:hover {
-  background: #8fc04e;
+  background: green;
 }
 
 @media (min-width: 1024px) {
@@ -537,7 +538,7 @@ section {
   padding: 8px 20px;
   margin: 0;
   background: #f3f8ec;
-  color: #8fc04e;
+  color: green;
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
@@ -550,7 +551,7 @@ section {
 }
 
 .section-title h3 span {
-  color: #8fc04e;
+  color: green;
 }
 
 .section-title p {
@@ -574,7 +575,7 @@ section {
   padding: 8px 20px;
   margin: 0 0 15px 0;
   background: #f3f8ec;
-  color: #8fc04e;
+  color: green;
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
@@ -604,13 +605,13 @@ section {
 }
 
 .about .icon-box .icon i {
-  color: #8fc04e;
+  color: green;
   font-size: 32px;
 }
 
 .about .icon-box:hover .icon {
-  background: #8fc04e;
-  border-color: #8fc04e;
+  background: green;
+  border-color: green;
 }
 
 .about .icon-box:hover .icon i {
@@ -630,7 +631,7 @@ section {
 }
 
 .about .icon-box .title a:hover {
-  color: #8fc04e;
+  color: green;
 }
 
 .about .icon-box .description {
@@ -648,7 +649,7 @@ section {
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(#8fc04e 50%, rgba(143, 192, 78, 0.4) 52%);
+  background: radial-gradient(green 50%, rgba(143, 192, 78, 0.4) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -691,7 +692,7 @@ section {
 }
 
 .about .play-btn:hover::after {
-  border-left: 15px solid #8fc04e;
+  border-left: 15px solid green;
   transform: scale(20);
 }
 
@@ -737,7 +738,7 @@ section {
   display: block;
   font-size: 28px;
   font-weight: 700;
-  color: #8fc04e;
+  color: green;
 }
 
 .why-us .box h4 {
@@ -756,7 +757,7 @@ section {
 }
 
 .why-us .box:hover {
-  background: #8fc04e;
+  background: green;
   padding: 30px 30px 70px 30px;
   box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
 }
@@ -778,7 +779,7 @@ section {
 .counts .counters span {
   font-size: 48px;
   display: block;
-  color: #8fc04e;
+  color: green;
 }
 
 .counts .counters p {
@@ -822,8 +823,8 @@ section {
 }
 
 .cta .cta-btn:hover {
-  background: #8fc04e;
-  border: 2px solid #8fc04e;
+  background: green;
+  border: 2px solid green;
 }
 
 /*--------------------------------------------------------------
@@ -881,11 +882,11 @@ section {
 
 .services .icon-box:hover h4 a,
 .services .icon-box:hover .icon i {
-  color: #8fc04e;
+  color: green;
 }
 
 .services .icon-box:hover .icon {
-  border-color: #8fc04e;
+  border-color: green;
 }
 
 /*--------------------------------------------------------------
@@ -981,7 +982,7 @@ section {
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #8fc04e;
+  background-color: green;
 }
 
 @media (min-width: 992px) {

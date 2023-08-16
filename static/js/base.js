@@ -1,13 +1,7 @@
-/**
-* Template Name: Remember
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
+
+    console.log('connrcted')
     "use strict";
-  
+    
     /**
      * Easy selector helper function
      */
@@ -248,5 +242,3 @@
      * Initiate Pure Counter 
      */
     new PureCounter();
-  
-  })
