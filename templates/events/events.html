@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %}
 
 {% block links %}
-<link rel="stylesheet" href="{% static 'css/events/events.css' %}">
+<link rel="stylesheet" href="{% static 'css/events.css' %}">
 {% endblock links %}
 
 {% block content %}
@@ -21,8 +21,7 @@
     <h1 class="display-6 fw-bold mb-2">Explore the events</h1>
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
-
-          <div class="carousel-item active">
+          <div class="carousel-item active" data-bs-interval="10000">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="card text-center shadow-lg" style="width: 18rem;">
                     <img src="{% static 'images/main-logo.png' %}" class="card-img-top" alt="event image">
@@ -36,7 +35,7 @@
             </div>
             
           </div>
-          <div class="carousel-item active">
+          <div class="carousel-item active"  data-bs-interval="1000">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="card text-center shadow-lg" style="width: 18rem;">
                     <img src="{% static 'images/main-logo.png' %}" class="card-img-top" alt="event image">
