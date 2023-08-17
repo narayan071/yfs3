@@ -1260,3 +1260,102 @@ footer #copyright {
     font-size: small;
   }
 }
+
+.joinbtn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.joinbtn:hover {
+  background: green;
+  color: white;
+  border: 2px solid green;
+}
+
+#dono-info {
+  background-color: black;
+  margin: 1em 0;
+  padding: 6em 0;
+  width: 100%;
+}
+
+.dono-info-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  width: 85%;
+  padding: 0 2em;
+}
+
+.dono-info-text {
+  color: white;
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+}
+
+.dono-info-text h1 {
+  font-size: clamp(32px, 5vw, 3em);
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.dono-subtext {
+  margin: 2em 0;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 160%;
+  font-size: clamp(0.75em, 5vw, 1em);
+  width: 85%;
+}
+
+.dono-details {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1em;
+  width: 85%;
+  -ms-grid-columns: 1fr 1fr 1fr; 
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: 0.5rem;
+}
+
+
+.dono-detail p {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.dono-detail p span {
+  display: inline-block;
+  background: red;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  margin-right: 0.25rem;
+}
+
+.dono-info-chart {
+  min-width: 30%;
+}
