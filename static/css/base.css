@@ -1359,3 +1359,10 @@ footer #copyright {
 .dono-info-chart {
   min-width: 30%;
 }
+
+@media (max-width: 767px) {
+  .join-us {
+    padding: 20px;
+    margin: 20px;
+  }
+}
