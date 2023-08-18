@@ -5,19 +5,24 @@
 {% endblock links %}
 
 {% block content %}
-<div class="p-5 bg-light rounded-3 hero-section">
-    <div class="container-fluid pb-5" data-aos="fade-up">
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 p-5 bg-white rounded-3 hero-section" data-aos="fade-up">
       <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
-        <h3 style="margin: 40px 0px;" class="title"> OUR EVENTS</h3>
-        <h1 class="fs-2 fw-bold mb-2">We conduct events all across Odisha !</h1>        
-        <p class="col-md-8 fs-6 mb-4" style="line-height: 2.25rem">
-          There are several events that happen all year long. See for yourself and join us in the upcoming events. Make sure you register yourself if you don't want to miss out on updates.
-        </p>
+      <h3 style="margin: 40px 0px;" class="title"> OUR EVENTS</h3>
+      <h1 class="fs-2 fw-bold mb-2">We conduct events all across Odisha !</h1>        
+      <p class="fs-6 mb-4" style="line-height: 2.25rem">
+        There are several events that happen all year long. See for yourself and join us in the upcoming events. Make sure you register yourself if you don't want to miss out on updates.
+      </p>
       <a class="w-btn" href="#" type="button">Explore</a>
     </div>
-</div>
 
+    <div class="col-md-6 p-0 d-flex justify-content-center align-items-center" data-aos="zoom-in">
+      <img src="{% static 'images/event.jpg' %}" alt="back" class="img-fluid">
+    </div>
+  </div>
+  </div>
+</div>
 <section class="m-5 container" data-aos="fade-in">
     <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
     <h3 style="margin: 40px 0px;" class="title"> LIVE EVENTS</h3>

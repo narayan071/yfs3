@@ -4,6 +4,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 footer {
   background-color: #0b0704;
@@ -22,6 +23,16 @@ footer {
  "copyright copyright copyright";
  position: sticky;
  top: 100%;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: rgb(14, 55, 2);
+  background: rgb(181, 234, 135);
+}
+
+::selection {
+  color: rgb(14, 55, 2);
+  background: rgb(181, 234, 135);
 }
 
 /* Works on Firefox */
