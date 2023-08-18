@@ -1281,6 +1281,26 @@ footer #copyright {
   border: 2px solid green;
 }
 
+.w-btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #000;
+  color: #000;
+}
+
+.w-btn:hover {
+  background: green;
+  color: white;
+  border: 2px solid green;
+}
+
 #dono-info {
   background-color: black;
   margin: 1em 0;
@@ -1365,4 +1385,18 @@ footer #copyright {
     padding: 20px;
     margin: 20px;
   }
+}
+
+
+.title{
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 8px 20px;
+  margin: 0;
+  background: #f3f8ec;
+  color: green;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
 }
