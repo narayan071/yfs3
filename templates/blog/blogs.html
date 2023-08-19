@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}<link rel="stylesheet" href="{% static 'css/blogs.css' %}">{% endblock links %}
+
+{% block content %}
+<div class="projects-done bg-white" style="padding-top: 50px;padding-bottom: 50px;height: fit-content;" data-aos="fade-up">
+  <div class="projects-done-block">
+    <div class="know-about-us-content">
+      <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i>
+      <h3 style="margin: 10px 0px;" class="title" data-aos="fade-in"> OUR BLOGS</h3></span>
+
+    </div>
+    <div class="projects-card-block " style="height: fit-content;">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="slide-container">
+              <div class="slide-main-block ">
+                <div class="slide-image-left" style=" box-shadow: 10px 10px 15px #888888;">
+                  <img src="{% static 'images/blogs/slide-1.jpg' %}" alt="">
+                  <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, a.</h2>
+                </div>
+                <div class="slide-content-right rounded-4 " style="background-color: #d3f9bc;" >
+
+                  <p style="text-truncate:truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sequi! Illum delectus sapiente
+                    illo animi excepturi assumenda libero deleniti ab error, laborum, velit aspernatur magni? Vero,
+                    vitae aperiam, optio, ducimus odio atque quas est veritatis tempore iusto et magnam similique.</p>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+            <div class="slide-container">
+              <div class="slide-main-block ">
+                <div class="slide-image-left" style=" box-shadow: 10px 10px 15px #888888;">
+                  <img src="{% static 'images/blogs/slide-2.jpg' %}" alt="">
+                  <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, maiores.</h2>
+                </div>
+                <div class="slide-content-right rounded-4 " style="background-color: #d3f9bc;">
+
+                  <p style="text-truncate:truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sequi! Illum delectus sapiente
+                    illo animi excepturi assumenda libero deleniti ab error, laborum, velit aspernatur magni? Vero,
+                    vitae aperiam, optio, ducimus odio atque quas est veritatis tempore iusto et magnam similique.</p>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+            <div class="slide-container">
+              <div class="slide-main-block">
+                <div class="slide-image-left" style=" box-shadow: 10px 10px 15px #888888;">
+                  <img src="{% static 'images/blogs/slide-3.jpg' %}" alt="">
+                  <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, minus.</h2>
+                </div>
+                <div class="slide-content-right rounded-4 " style="background-color: #d3f9bc;">
+
+                  <p style="text-truncate:truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sequi! Illum delectus sapiente
+                    illo animi excepturi assumenda libero deleniti ab error, laborum, velit aspernatur magni? Vero,
+                    vitae aperiam, optio, ducimus odio atque quas est veritatis tempore iusto et magnam similique.</p>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Main-blog-block-end -->
+<div class="projects-done" style="background-color: white;padding-top: 50px;">
+  <div class="projects-done-block">
+    {% comment %} {% if blogs.count == 0 %} {% endcomment %}
+    <div class="container mb-5">
+      <h2 align="center">No Blogs Yet. Open an account if you want to contribute</h2>
+      <p align="center" class="mt-4">
+        <a href="#" class="w-btn">Start Now</a>
+      </p>
+    </div>
+  </div>
+
+  {% endblock content%}

@@ -2,9 +2,9 @@ from django.shortcuts import render,get_object_or_404
 
 # Create your views here.
 
-def blog(request):
+def blogs(request):
     context = {
-        'blog' : 'blog',
+        'pname' : 'blogs',
     }
-    return render(request, 'blog/index.html', context)
+    return render(request, 'blog/blogs.html', context)
 
