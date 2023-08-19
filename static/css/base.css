@@ -1302,8 +1302,10 @@ footer #copyright {
   border-radius: 25px;
   transition: 0.5s;
   margin-top: 10px;
-  border: 2px solid #000;
+  border: 2px solid green;
   color: #000;
+  text-decoration: none;
+  text-align: center;
 }
 
 .w-btn:hover {

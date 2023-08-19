@@ -1,0 +1,82 @@
+.hero-section {
+    background: -webkit-gradient(linear, left bottom, left top, from(#dfeadf), to(white));
+    background: linear-gradient(to top, #dfeadf, white);
+  }
+  
+  .joinus-hero {
+    outline: 1px solid green;
+    height: 75vh;
+  }
+  
+  .joinus-hero .carousel {
+    height: 100%;
+  }
+  
+  .carousel-img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 0 auto;
+    -webkit-filter: brightness(60%);
+            filter: brightness(60%);
+  }
+  
+  .testimonial-slider {
+    background: -webkit-gradient(linear, left bottom, left top, from(#dfeadf), to(white));
+    background: linear-gradient(to top, #dfeadf, white);
+    -webkit-box-shadow: 0 0 0.5em 0.25em rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 0.5em 0.25em rgba(0, 0, 0, 0.4);
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .testimonial-slider .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: #dc3545;
+    border-radius: 100%;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .testimonial-slider {
+      width: 90%;
+    }
+  }
+  
+  .testimonial-slider {
+    padding: 10px 0px 40px;
+  }
+  
+  .join-us-forms {
+    background: -webkit-gradient(linear, left bottom, left top, from(#dfeadf), to(white));
+    background: linear-gradient(to top, #dfeadf, white);
+  }
+  
+  .card-img-top {
+    height: 18rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  .card {
+    -webkit-transition: 0.2s all ease-in-out;
+    transition: 0.2s all ease-in-out;
+    margin: 1rem !important;
+    -webkit-box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.4);
+  }
+  
+  .card:hover {
+    -webkit-box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.4);
+  }
+  
+  .card-text {
+    line-height: 1.50rem;
+  }
+  
+  footer {
+    margin-top: 0 !important;
+  }
+  /*# sourceMappingURL=joinus.css.map */
