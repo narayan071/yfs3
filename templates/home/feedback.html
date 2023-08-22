@@ -28,49 +28,51 @@
 {% endblock links %}
 
 {% block content %}
-<div class="contact-us feedback container">
-    <div class="card rounded shadow col-md-6" style="margin-top: 3rem">
-        <div class="card-header text-center">
-            <h1 class="display-6 text-success">
-                Find more ways to help!
-            </h1>
-        </div>
-        <div class="card-body">
-            <form action="" method="POST">
-                {% if messages %}
-                {% for message in messages %}
-                    <p class="alert alert-{{message.tags}} text-center">{{message}}</p>
-                {% endfor %}
-                {% endif %}
-                {% csrf_token %}
-                {% if form.errors %}
-                <div class="error">
-                    <p class="text-danger alert alert-danger">Please fix the errors and try again...</p>
-                </div>
-                {% endif %}
-                {% for field in form %}
-                <label for="{{field.name}}" class="form-label"><strong>{{field.label}}</strong>: </label>
-                {{field}}
-                <p class="text-danger my-2">
-                    {{field.errors | striptags}}
+<center>
+    <div class="contact-us feedback container">
+        <div class="card rounded shadow col-md-6" style="margin-top: 3rem">
+            <div class="card-header text-center">
+                <h1 class="display-6 text-success">
+                    Find more ways to help!
+                </h1>
+            </div>
+            <div class="card-body">
+                <form action="" method="POST">
+                    {% if messages %}
+                    {% for message in messages %}
+                        <p class="alert alert-{{message.tags}} text-center">{{message}}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="error">
+                        <p class="text-danger alert alert-danger">Please fix the errors and try again...</p>
+                    </div>
+                    {% endif %}
+                    {% for field in form %}
+                    <label for="{{field.name}}" class="form-label"><strong>{{field.label}}</strong>: </label>
+                    {{field}}
+                    <p class="text-danger my-2">
+                        {{field.errors | striptags}}
+                    </p>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary btn-success w-100">Submit</button>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <p class="text-success">
+                    <a class="btn btn-sm btn-success" href="https://chat.whatsapp.com/JzMCD4Z7R2q9xBIhcB40M0">
+                        <i class="fab fa-whatsapp"></i>
+                        Contact us via Whatsapp
+                    </a>
+                    <a class="btn btn-sm btn-success mx-2" href="mailto:punyasloka@humancircle.in">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Contact us via Email
+                    </a>
                 </p>
-                {% endfor %}
-                <button type="submit" class="btn btn-primary btn-success w-100">Submit</button>
-            </form>
-        </div>
-        <div class="card-footer text-center">
-            <p class="text-success">
-                <a class="btn btn-sm btn-success" href="https://chat.whatsapp.com/JzMCD4Z7R2q9xBIhcB40M0">
-                    <i class="fab fa-whatsapp"></i>
-                    Contact us via Whatsapp
-                </a>
-                <a class="btn btn-sm btn-success mx-2" href="mailto:punyasloka@humancircle.in">
-                    <i class="fas fa-envelope mr-2"></i>
-                    Contact us via Email
-                </a>
-            </p>
-            <p class="text-secondary mt-2">Phone: 8917630076</p>
+                <p class="text-secondary mt-2">Phone: 8917630076</p>
+            </div>
         </div>
     </div>
-</div>
+</center>
 {% endblock content %}
