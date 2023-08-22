@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}YfS | Contact Us{% endblock title %}
+
+
+{% block meta_tags %}
+<meta property="og:title" content="Contact us at Youth for Sustainability">
+<meta property="og:url" content="https://youthforsustainability.in/">
+<meta property="og:image" content="{% static 'img/YFS_logo_sqr_or.png' %}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:locale" content="en">
+
+<meta name="twitter:title" content="Contact Us at Youth for Sustainability India">
+<meta name="twitter:description" content="Contact us form">
+<meta name="twitter:site" content="@yfs_india">
+<meta name="twitter:domain" content="youthforsustainability.in">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{% static 'img/main-logo.png' %}">
+<meta name="twitter:image:alt" content="Youth for Sustainability India">
+{% endblock meta_tags %}
+
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock links %}
+
+{% block content %}
+<div class="contact-us feedback container">
+    <div class="card rounded shadow col-md-6" style="margin-top: 3rem">
+        <div class="card-header text-center">
+            <h1 class="display-6 text-success">
+                Find more ways to help!
+            </h1>
+        </div>
+        <div class="card-body">
+            <form action="" method="POST">
+                {% if messages %}
+                {% for message in messages %}
+                    <p class="alert alert-{{message.tags}} text-center">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                {% csrf_token %}
+                {% if form.errors %}
+                <div class="error">
+                    <p class="text-danger alert alert-danger">Please fix the errors and try again...</p>
+                </div>
+                {% endif %}
+                {% for field in form %}
+                <label for="{{field.name}}" class="form-label"><strong>{{field.label}}</strong>: </label>
+                {{field}}
+                <p class="text-danger my-2">
+                    {{field.errors | striptags}}
+                </p>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-success w-100">Submit</button>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <p class="text-success">
+                <a class="btn btn-sm btn-success" href="https://chat.whatsapp.com/JzMCD4Z7R2q9xBIhcB40M0">
+                    <i class="fab fa-whatsapp"></i>
+                    Contact us via Whatsapp
+                </a>
+                <a class="btn btn-sm btn-success mx-2" href="mailto:punyasloka@humancircle.in">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Contact us via Email
+                </a>
+            </p>
+            <p class="text-secondary mt-2">Phone: 8917630076</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
