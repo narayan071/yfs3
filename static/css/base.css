@@ -1073,7 +1073,8 @@ footer #socials .social-icons {
   text-align: center;
   margin-right: 12px;
   -webkit-transition: 0.2s all;
-  transition: 0.2s all;
+  /* transition: 0.2s all; */
+  transition: 0.2s all; /* Add transition here */
   cursor: pointer;
   color: white;
 }
