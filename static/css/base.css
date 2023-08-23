@@ -5,7 +5,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} 
+
 footer {
   background-color: #0b0704;
   color: whitesmoke;
@@ -1074,22 +1075,27 @@ footer #socials .social-icons {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   cursor: pointer;
+  color: white;
 }
 
 footer #socials .fa-facebook:hover {
-  color: #3b5998;
+  color: #4267B2;
 }
 
 footer #socials .fa-linkedin:hover {
-  color: #0e76a8;
+  color: #0A66C2;
 }
 
 footer #socials .fa-instagram:hover {
-  color: #8a3ab9;
+  /* color: #8a3ab9; */
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 footer #socials .fa-twitter:hover {
-  color: dodgerblue;
+  color: #00acee;
 }
 
 footer #links {
