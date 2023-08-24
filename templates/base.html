@@ -20,38 +20,51 @@
 <body class="body">
     <nav class="navbar bg-black navbar-expand-lg py-0">
         <div class="container-fluid">
-          <a class="navbar-brand fw-bolder" style="color:rgb(71, 68, 68);" href="/"><img src="{% static 'images/main-logo.png' %}" alt="logo"></a>
-          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=" navbar-toggler-icon"></span>
+          <div class="p-"><img src="{% static 'images/main-logo.png' %}" alt="logo"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" style = "height:100%" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100 text-white">
               <li class="nav-item" style="height: 100%;">
                 <a class="nav-link mx-1" aria-current="page" style="padding-top:auto; padding-bottom:auto;" href="{% url 'home' %}">Home</a>
               </li>
                 <li class="nav-item my-0">
-                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'events' %}">Events</a>
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'events' %}">SESSIONS</a>
               </li>
-                <li class="nav-item my-0">
+                {% comment %} <li class="nav-item my-0">
                 <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'blogs' %}">Blog</a>
+              </li> {% endcomment %}
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'joinus' %}">CAREER</a>
               </li>
                 <li class="nav-item my-0">
-                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'joinus' %}">Join us</a>
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'chapters' %}">chapters</a>
               </li>
+                {% comment %} <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'contact' %}">Contact us</a>
+              </li> {% endcomment %}
                 <li class="nav-item my-0">
                 <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'contact' %}">Contact us</a>
               </li>
-                <li class="nav-item my-0">
-                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'feedback' %}">Feedback</a>
+              {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+                  Welcome, {{user.first_name}}
+                </a>
+                <ul class="dropdown-menu">
+                  {% comment %} <li><a class="dropdown-item " href="{% url 'profile' %}">Profile</a></li> {% endcomment %}
+                  <li><a class="dropdown-item" href="{% url 'signout' %}">Log out</a></li>
+                </ul>
               </li>
-              </li>
-                <li class="nav-item my-0">
-                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'login' %}">login</a>
-              </li>
-              </li>
-                <li class="nav-item my-0">
-                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signup' %}">signup</a>
-              </li>
+              {% else %}
+            <li class="nav-item my-0">
+            <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signin' %}">LOGIN</a>
+          </li>
+            <li class="nav-item my-0">
+            <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signup' %}">SIGNUP</a>
+          </li>
+              {% endif %}
 
             </ul>
           </div>
@@ -74,11 +87,11 @@
         />
       </div>
       <div id="socials">
-       <p class="social-desc">Connect for more updates</p>
-        <a href="facebook.com/yfs.in"><i class="social-icons fab fa-facebook"></i></a>
+      <p class="social-desc">Connect for more updates</p>
+        <a href="https://www.facebook.com/youthforsustainabilityindia/"><i class="social-icons fab fa-facebook"></i></a>
         <a href="https://www.linkedin.com/company/38126458"><i class="social-icons fab fa-linkedin"></i></a>
-        <a href="instagram.com/yfs.in"><i class="social-icons fab fa-instagram"></i></a>
-        <a href="twitter.com/yfs_india"><i class="social-icons fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/yfs.in"><i class="social-icons fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com/yfs_india"><i class="social-icons fab fa-twitter"></i></a>
       </div>
       <div id="links">
         <div class="explore">
@@ -94,7 +107,7 @@
           <p>More</p>
           <ul>
             <li><a href="#">Project</a></li>
-            <li><a href="#">Events</a></li>
+            <li><a href="#">SESSIONS</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Donate</a></li>
           </ul>

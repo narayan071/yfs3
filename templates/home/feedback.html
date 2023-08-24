@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}YfS | Contact Us{% endblock title %}
-
-
 {% block meta_tags %}
 <meta property="og:title" content="Contact us at Youth for Sustainability">
 <meta property="og:url" content="https://youthforsustainability.in/">
@@ -31,12 +28,15 @@
 <center>
     <div class="contact-us feedback container">
         <div class="card rounded shadow col-md-6" style="margin: 3rem" data-aos="flip-up">
-            <div class="card-header text-center">
-                <h1 class="display-6 text-success">
+            <div class="card-header bg-success text-center">
+                <h1 class="display-6 mt-1 text-white">
                     Find more ways to help!
                 </h1>
             </div>
-            <div class="card-body">
+            <div class="card-body text-center">
+                    Youth for Sustainability is a movement to engage with the youth for United Nations Sustainable Development Goals. We commit to act before we react.
+                    <br />
+                    There are many ways to join us and support our mission. Contact us to find out more about volunteer opportunities, fundraising events, and ways that you can get our message to your friends and family. You can host us for a summit at your place where we equip you with the necessary toolkit for Sustainable Development.
                 <form action="" method="POST">
                     {% if messages %}
                     {% for message in messages %}
@@ -56,16 +56,16 @@
                         {{field.errors | striptags}}
                     </p>
                     {% endfor %}
-                    <button type="submit" class="btn btn-primary btn-success w-100">Submit</button>
+                    <button type="submit" class="w-btn w-100">Submit</button>
                 </form>
             </div>
             <div class="card-footer text-center">
                 <p class="text-success">
-                    <a class="btn btn-sm btn-success" href="https://chat.whatsapp.com/JzMCD4Z7R2q9xBIhcB40M0">
+                    <a class="w-btn btn-sm" href="https://chat.whatsapp.com/JzMCD4Z7R2q9xBIhcB40M0">
                         <i class="fab fa-whatsapp"></i>
                         Contact us via Whatsapp
                     </a>
-                    <a class="btn btn-sm btn-success mx-2" href="mailto:punyasloka@humancircle.in">
+                    <a class="w-btn btn-sm mx-2" href="mailto:punyasloka@humancircle.in">
                         <i class="fas fa-envelope mr-2"></i>
                         Contact us via Email
                     </a>
