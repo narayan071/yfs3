@@ -236,6 +236,7 @@ h6 {
   text-transform: uppercase;
   white-space: nowrap;
   transition: 0.3s;
+  font-weight: 800;
 }
 
 .navbar a i,
