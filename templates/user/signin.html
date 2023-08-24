@@ -7,7 +7,7 @@
         <div class="col-md-6 mx-auto">
             <div class="card shadow-lg"  data-aos="zoom-in">
                 <div class="card-header bg-success text-white text-center">
-                    <h3>Log In</h3>
+                    <h3 class="my-auto">Log In</h3>
                 </div>
                 <div class="card-body">
                     {% for message in messages %}
@@ -17,17 +17,17 @@
                         {% csrf_token %}
 
                         <div class="mb-1">
-                            <label for="">username</label>
+                            <label for="">Username</label>
                             <input type="text" name = "username" class="form-control" required>
                         </div>
 
                         <div class="mb-1">
-                            <label for="">password</label>
+                            <label for="">Password</label>
                             <input type="password" name = "password" class="form-control" required>
                         </div>
 
                         <div class="mb-1">
-                            <input type="submit" value ="sign-in" class="w-btn w-100">
+                            <input type="submit" value ="Sign-in" class="w-btn w-100">
                         </div>
                     </form>
                 </div>
