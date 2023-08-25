@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'dashboard',
     'events',
     'joinus',
+    'chapters',
 ]
 
 MIDDLEWARE = [

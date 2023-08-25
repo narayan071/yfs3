@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container p-5 ">
+    <div class="row">
+        <div class="card border border-3 rounded-3 m-5 col-md-7 mx-auto">
+            <div class="card-header">
+                <h1 class="display-6 fw-bold text-center my-auto">{{form.name}}</h1>
+            </div>
+    
+        <div class="card-body">
+            <form action="" method="post" class="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if form.errors %}
+                    <div class="error">
+                        <p class="text-danger alert alert-danger">Please fix the errors and try again...</p>
+                    </div>
+                {% endif %}
+        
+                {% for field in form %}
+                    <div class="mb-3 {{field.name}}">
+                        <label for="{{field.name}}" class="form-label" style="margin: bottom 0px;">{{field.label}}: </label>
+                        <p class="text-muted form-text mb-1" id="userHelp">{{field.help_text}}</p>
+                        {{field}}
+                        <p class="text-danger my-2">
+                            {{field.errors | striptags}}
+                        </p>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary landing-btn w-100 mt-4">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}

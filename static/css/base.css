@@ -6,7 +6,18 @@
           box-sizing: border-box;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 } 
+.error{
+  color: red;
+}
 
+.success{
+  color: green;   
+}
+
+.card-header{
+  background-color: #198754 !important;
+  color: white !important;
+}
 footer {
   background-color: #0b0704;
   color: whitesmoke;
