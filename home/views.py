@@ -16,4 +16,4 @@ def contact(request):
     context={
         "pname":"contact"
     }
-    return render(request,'home/contact.html',context)
+    return render(request,'home/feedback.html',context)
