@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% block head %}{% endblock head %}
   {% block meta_tags %}{% endblock meta_tags %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +19,11 @@
         {% block links %}{% endblock links %}
 </head>
 <body class="body">
-    <nav class="navbar bg-black navbar-expand-lg py-0">
+  <nav id="myNav" class="navbar navbar-expand-lg py-0 bg-black mb-5" style="background-color: black">
         <div class="container-fluid">
           <div class="p-2"><img src="{% static 'images/main-logo.png' %}" alt="logo"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
           </button>
           <div class="collapse navbar-collapse" style = "height:100%" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100 text-white">
@@ -151,5 +152,6 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'js/base.js' %}"></script>
+
   </body>
 </html>

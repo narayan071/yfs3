@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 def chapters(request):
     context = {
-        "pname":chapters,
+        "pname":"chapters",
     }
 
     return render(request, "chapters/index.html", context)
