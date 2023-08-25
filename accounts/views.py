@@ -60,5 +60,8 @@ def signup(request):
 
 def signout(request):
     logout(request)
-    return render(request, 'user/signin.html')
+    context = {
+        "pname":"signin"
+    }
+    return render(request, 'user/signin.html',context)
 
