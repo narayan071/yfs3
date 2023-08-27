@@ -7,18 +7,17 @@ class NewChapterForm(forms.ModelForm):
         exclude = ['selected', 'send_email', 'user', 'applied_at']
         help_texts = {
             'institution_name': ('Enter the name of the institute'),
+            'city' : ('Enter the location of your institute'),
             'email': ('Mention your emailID here'),
-            'year': ('Which year/standard are you in currently'),
             'define_sdg': ('Define sustainable development goals in your own words. Do not write more than 50 words.'),
-            'shown_leadership': ('Do you have any leadership experience ?'),
-            'leadership_experience': ('Let us know about your leadership experiences if any'),
-            'community_service': ('Describe about any of your community service(s) if any'),
+            'service': (' List some potential activities, events, or projects your chapter might organize to promote sustainability.'),
+            'committed' : (' How committed are you to managing and sustaining the chapter over the long term?'),
             'reasons_for_chapter': ('Why do you want to start a YfS Chapter in your college'),
+            'plans_for_chapter': ('How committed are you to managing and sustaining the chapter over the long term?'),
             'chapter_recognition': ('Do you want your chapter to be recognised by the official administration of your college'),
-            'plans_for_chapter': ('What are your plans for your college chapter of YfS'),
             'phone': ('Your contact number'),
-            'hours': ('How many hours can you give to YfS per week'),
             'queries': ('Let us know if you have any queries for us'),
+            'website': ('Enter the link to your chapter website(if available)'),
         }
 
     def __init__(self, *args, **kwargs):
