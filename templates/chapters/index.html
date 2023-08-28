@@ -54,6 +54,23 @@
             <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
             <h3 class="title" >CHAPTERS</h3>
         </div>
+        <div>
+            {% for chapter in allchapters %}
+            <div class="card" >
+                <div class="card-header">
+                    <h5 class="card-title my-auto">{{ chapter.institution_name }}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Chapter Lead Details:</p>
+                    <p>
+                        Name -- {{ chapter.chapter_lead.first_name }}  {{ chapter.chapter_lead.last_name }}<br>
+                        Email --  {{ chapter.chapter_lead.email }}
+                    </p>
+                    <p class="card-text">Established On: {{ chapter.established_on }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 {% endblock content %}
