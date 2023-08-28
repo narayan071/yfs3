@@ -33,7 +33,8 @@
                     <br />
                     There are many ways to join us and support our mission. Contact us to find out more about volunteer opportunities, fundraising events, and ways that you can get our message to your friends and family. You can host us for a summit at your place where we equip you with the necessary toolkit for Sustainable Development.
                 <form action="" method="POST">
-                    {% if messages %}
+                    {% csrf_token %}
+                    {% comment %} {% if messages %}
                     {% for message in messages %}
                         <p class="alert alert-{{message.tags}} text-center">{{message}}</p>
                     {% endfor %}
@@ -43,7 +44,7 @@
                     <div class="error">
                         <p class="text-danger alert alert-danger">Please fix the errors and try again...</p>
                     </div>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                     {% for field in form %}
                     <label for="{{field.name}}" class="form-label"><strong>{{field.label}}</strong>: </label>
                     {{field}}
