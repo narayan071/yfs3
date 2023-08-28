@@ -10,16 +10,32 @@
 <!-- this is start of landing page -->
 {% block content %}
   <!-- ======= Hero Section ======= -->
-  <section id="hero" style="background: url('{% static 'images/home/bg1.png' %}') top center">
+  <section id="hero">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/carousel/slide1.jpg' %}" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/carousel/slide2.jpg' %}" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/carousel/slide3.jpg' %}" class="d-block w-100" alt="Slide 3">
+        </div>
+      </div>
+    </div>
     <div class="hero-container" data-aos="fade-up">
-      <h1>BE THE CHANGE YOU
+      <h1 class="text">BE THE CHANGE YOU
         WANT TO SEE</h1>
-      <h2>#ActionbeforeReaction</h2>
       <a href="#why-us" class="btn-get-started">what we do</a>
+      <a href="#" class="btn-get-started">Donate</a>
     </div>
   </section>
-  <!-- End Hero -->
-
   <main id="main">
 
     <!-- ======= About Section ======= -->
@@ -175,7 +191,7 @@
     </section><!-- End Services Section -->
 
 
-    <section id="dono-info" style="height: 700px;" data-aos="fade-up">
+    {% comment %} <section id="dono-info" style="height: 700px;" data-aos="fade-up">
       <div class="dono-info-body">
         <div class="dono-info-text">
          <h1>How we spend your donations and where it goes !</h1>
@@ -217,7 +233,7 @@
         </div>
         <img src="{% static 'images/home/Chart.png' %}" alt="donation division  chart" class="dono-info-chart" data-aos="zoom-in">
       </div>
-    </section>
+    </section> {% endcomment %}
 
     <!-- ======= Data Section ======= -->
     <div class="text-light m-5 p-5 join-us image-fluid" style="border-radius: 30px; background: url('{% static 'images/home/join-us-bg.png' %}'); background-size: cover; box-shadow: 10px 10px 20px grey; display: flex; flex-direction: column; justify-content: center; position: relative;" data-aos="zoom-in">

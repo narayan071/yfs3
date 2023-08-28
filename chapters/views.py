@@ -14,9 +14,7 @@ def chapters(request):
 def new_chapter(request):
     context = {}
     if not request.user.is_authenticated:
-        messages.info(
-            request, "Please log into your account before applying to volunteer")
-
+        messages.error(request, "Please log into your account before applying to volunteer")
         return redirect('signin')
 
     form = NewChapterForm(instance=request.user)

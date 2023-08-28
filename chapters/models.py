@@ -11,6 +11,37 @@ class NewChapterApplication(models.Model):
         ('M', 'Maybe'),
     ]
 
+    STATES = [
+        ('Andhra Pradesh', 'Andhra Pradesh'),
+        ('Arunachal Pradesh', 'Arunachal Pradesh'),
+        ('Assam', 'Assam'),
+        ('Bihar', 'Bihar'),
+        ('Chhattisgarh', 'Chhattisgarh'),
+        ('Goa', 'Goa'),
+        ('Gujarat', 'Gujarat'),
+        ('Haryana', 'Haryana'),
+        ('Himachal Pradesh', 'Himachal Pradesh'),
+        ('Jharkhand', 'Jharkhand'),
+        ('Karnataka', 'Karnataka'),
+        ('Kerala', 'Kerala'),
+        ('Madhya Pradesh', 'Madhya Pradesh'),
+        ('Maharashtra', 'Maharashtra'),
+        ('Manipur', 'Manipur'),
+        ('Meghalaya', 'Meghalaya'),
+        ('Mizoram', 'Mizoram'),
+        ('Nagaland', 'Nagaland'),
+        ('Odisha', 'Odisha'),
+        ('Punjab', 'Punjab'),
+        ('Rajasthan', 'Rajasthan'),
+        ('Sikkim', 'Sikkim'),
+        ('Tamil Nadu', 'Tamil Nadu'),
+        ('Telangana', 'Telangana'),
+        ('Tripura', 'Tripura'),
+        ('Uttar Pradesh', 'Uttar Pradesh'),
+        ('Uttarakhand', 'Uttarakhand'),
+        ('West Bengal', 'West Bengal')
+    ]
+
     SHOWN_LEADERSHIP = [
         (True, 'Yes'),
         (False, 'No'),
@@ -18,19 +49,18 @@ class NewChapterApplication(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     applied_at = models.DateTimeField(("Applied at"),auto_now_add=True, blank=True)
     institution_name = models.CharField(max_length=200, primary_key=True)
+    state = models.CharField(max_length=49, choices = STATES, null=False, default = None)
+    city = models.CharField(max_length=100, null = False, default = None)
     first_name = models.CharField(("First Name"), max_length=100, help_text="Enter your first name", null=True)
     last_name = models.CharField(("Last Name"), max_length=100,  help_text="Enter your last name", null=True)
-    year = models.IntegerField(null=False)
     define_sdg = models.TextField(max_length=250, null=False)
-    shown_leadership = models.BooleanField(default=False, choices=SHOWN_LEADERSHIP)
-    leadership_experience = models.TextField(max_length=800)
-    community_service = models.TextField(max_length=550)
+    service = models.TextField(max_length=550, default=None)
+    committed = models.TextField(max_length=800, default = None)
     reason_for_chapter = models.TextField(max_length=600)
     chapter_recognition = models.CharField(max_length=5, choices=CHAPTER_RECOGNITION, default='Y')
-    plans_for_chapter = models.TextField(max_length=800)
     phone_number = models.CharField(max_length=10)
     email = models.EmailField(max_length=200, null=False, unique=True)
-    hours = models.CharField(max_length=100, null=False)
+    website = models.CharField(max_length=200, null=True),
     queries = models.CharField(max_length=800)
     selected = models.BooleanField(default=False)
     send_email = models.BooleanField(default=False)
