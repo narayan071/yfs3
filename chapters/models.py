@@ -78,3 +78,11 @@ class NewChapterApplication(models.Model):
 
     def __str__(self):
         return "New Chapter Form: " + self.institution_name
+
+class AllChapter(models.Model):
+    institution_name = models.CharField(max_length=220)
+    total_members = models.IntegerField(null=False, default=0)
+    chapter_lead = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+    established_on = models.DateField(("Chapter Estd. On"),auto_now_add=True)
+    def __str__(self):
+        return f"{self.institution_name}"
