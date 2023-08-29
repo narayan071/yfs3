@@ -1,5 +1,6 @@
 from . import models
 from django import forms
+from .models import NewChapterApplication, JoinChapterApplication
 
 class NewChapterForm(forms.ModelForm):
     class Meta:
@@ -25,9 +26,16 @@ class NewChapterForm(forms.ModelForm):
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
             # visible.field.widget.attrs['placeholder'] = visible.field.help_text
+
 class JoinChapterForm(forms.ModelForm):
+    institution_name = forms.ModelChoiceField(
+        queryset=NewChapterApplication.objects.all(),  # Query only the registered institution names
+        empty_label=None,  # Prevent an empty label from appearing in the dropdown
+        label='Institution Name',  # Label for the field
+    )
+
     class Meta:
-        model = models.NewChapterApplication
+        model = JoinChapterApplication  # Use the JoinChapterApplication model
         exclude = ['selected', 'send_email', 'user', 'applied_at']
         help_texts = {
             'institution_name': ('Are you a student? If yes,mention the name of the institute'),
