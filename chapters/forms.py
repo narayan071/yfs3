@@ -25,3 +25,24 @@ class NewChapterForm(forms.ModelForm):
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
             # visible.field.widget.attrs['placeholder'] = visible.field.help_text
+class JoinChapterForm(forms.ModelForm):
+    class Meta:
+        model = models.NewChapterApplication
+        exclude = ['selected', 'send_email', 'user', 'applied_at']
+        help_texts = {
+            'institution_name': ('Are you a student? If yes,mention the name of the institute'),
+            'city' : ('Enter the location of your institute'),
+            'email': ('Mention your emailID here'),
+            'experience': ('Do you have any prior volunteering experience with any non-profit organization?'),
+            'committed' : ('How many hours can you devote per day?'),
+            'reasons_for_chapter': ('Why do you want to join YfS?'),
+            'introduction': ('Who introduced you to YFS?'),
+            'expertise': ('What are your expertise?'),
+            'phone_number': ('Your contact number'),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(JoinChapterForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
+            # visible.field.widget.attrs['placeholder'] = visible.field.help_text
