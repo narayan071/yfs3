@@ -86,3 +86,56 @@ class AllChapter(models.Model):
     established_on = models.DateField(("Chapter Estd. On"),auto_now_add=True)
     def __str__(self):
         return f"{self.institution_name}"
+
+class JoinChapterApplication(models.Model):
+
+    STATES = [
+        ('Andhra Pradesh', 'Andhra Pradesh'),
+        ('Arunachal Pradesh', 'Arunachal Pradesh'),
+        ('Assam', 'Assam'),
+        ('Bihar', 'Bihar'),
+        ('Chhattisgarh', 'Chhattisgarh'),
+        ('Goa', 'Goa'),
+        ('Gujarat', 'Gujarat'),
+        ('Haryana', 'Haryana'),
+        ('Himachal Pradesh', 'Himachal Pradesh'),
+        ('Jharkhand', 'Jharkhand'),
+        ('Karnataka', 'Karnataka'),
+        ('Kerala', 'Kerala'),
+        ('Madhya Pradesh', 'Madhya Pradesh'),
+        ('Maharashtra', 'Maharashtra'),
+        ('Manipur', 'Manipur'),
+        ('Meghalaya', 'Meghalaya'),
+        ('Mizoram', 'Mizoram'),
+        ('Nagaland', 'Nagaland'),
+        ('Odisha', 'Odisha'),
+        ('Punjab', 'Punjab'),
+        ('Rajasthan', 'Rajasthan'),
+        ('Sikkim', 'Sikkim'),
+        ('Tamil Nadu', 'Tamil Nadu'),
+        ('Telangana', 'Telangana'),
+        ('Tripura', 'Tripura'),
+        ('Uttar Pradesh', 'Uttar Pradesh'),
+        ('Uttarakhand', 'Uttarakhand'),
+        ('West Bengal', 'West Bengal')
+    ]
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+    applied_at = models.DateTimeField(("Applied at"),auto_now_add=True, blank=True)
+    institution_name = models.CharField(max_length=200)
+    state = models.CharField(max_length=49, choices = STATES, null=False, default = None)
+    city = models.CharField(max_length=100, null = False, default = None)
+    first_name = models.CharField(("First Name"), max_length=100, help_text="Enter your first name", null=True)
+    last_name = models.CharField(("Last Name"), max_length=100,  help_text="Enter your last name", null=True)
+    committed = models.TextField(max_length=250, null=False)
+    introduction = models.TextField(max_length=250, default=None)
+    experience = models.TextField(max_length=800, default = None)
+    expertise = models.TextField(max_length=800, default = None)
+    reasons_for_chapter = models.TextField(max_length=600)
+    phone_number = models.CharField(max_length=10)
+    email = models.EmailField(max_length=200, primary_key=True, null=False, unique=True)
+    selected = models.BooleanField(default=False)
+    send_email = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "Join School/College Chapter Form: " + self.first_name + ' ' + self.last_name
