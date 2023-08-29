@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top: 100px">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card m-1">
+                <div class="card-header">
+                    <div class="border border-1 rounded-5 text-center">
+                        <h2 class="my-auto">header</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="my-auto">body</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card m-1">
+                <div class="card-header"><h3 class="my-auto">biodata</h3></div>
+                <div class="card-body">
+                    <h5>
+                        <table class="table-borderless table-sm" style="width:100%">
+                            <tr>
+                                <td>Name: {{user.first_name}}</td>
+                                <td>Last: {{user.last_name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email: {{user.email}}</td>
+                            </tr>
+                            
+                        </table>
+                    </h5>
+                </div>
+            </div>
+            <div class="card m-1 mt-3">
+                <div class="card-header">
+                    <h3>another card</h3>
+                </div>
+                <div class="card-body">
+                    another card's body
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

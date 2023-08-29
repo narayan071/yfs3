@@ -65,3 +65,8 @@ def signout(request):
     }
     return render(request, 'user/signin.html',context)
 
+def profile(request):
+    context={
+        "pname": "profile"
+    }
+    return render(request,'user/profile.html',context)
