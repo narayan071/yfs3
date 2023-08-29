@@ -25,56 +25,24 @@ class NewChapterForm(forms.ModelForm):
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
             # visible.field.widget.attrs['placeholder'] = visible.field.help_text
-class JoinChapterApplication(models.Model):
+class JoinChapterForm(forms.ModelForm):
+    class Meta:
+        model = models.NewChapterApplication
+        exclude = ['selected', 'send_email', 'user', 'applied_at']
+        help_texts = {
+            'institution_name': ('Are you a student? If yes,mention the name of the institute'),
+            'city' : ('Enter the location of your institute'),
+            'email': ('Mention your emailID here'),
+            'experience': ('Do you have any prior volunteering experience with any non-profit organization?'),
+            'committed' : ('How many hours can you devote per day?'),
+            'reasons_for_chapter': ('Why do you want to join YfS?'),
+            'introduction': ('Who introduced you to YFS?'),
+            'expertise': ('What are your expertise?'),
+            'phone_number': ('Your contact number'),
+        }
 
-    STATES = [
-        ('Andhra Pradesh', 'Andhra Pradesh'),
-        ('Arunachal Pradesh', 'Arunachal Pradesh'),
-        ('Assam', 'Assam'),
-        ('Bihar', 'Bihar'),
-        ('Chhattisgarh', 'Chhattisgarh'),
-        ('Goa', 'Goa'),
-        ('Gujarat', 'Gujarat'),
-        ('Haryana', 'Haryana'),
-        ('Himachal Pradesh', 'Himachal Pradesh'),
-        ('Jharkhand', 'Jharkhand'),
-        ('Karnataka', 'Karnataka'),
-        ('Kerala', 'Kerala'),
-        ('Madhya Pradesh', 'Madhya Pradesh'),
-        ('Maharashtra', 'Maharashtra'),
-        ('Manipur', 'Manipur'),
-        ('Meghalaya', 'Meghalaya'),
-        ('Mizoram', 'Mizoram'),
-        ('Nagaland', 'Nagaland'),
-        ('Odisha', 'Odisha'),
-        ('Punjab', 'Punjab'),
-        ('Rajasthan', 'Rajasthan'),
-        ('Sikkim', 'Sikkim'),
-        ('Tamil Nadu', 'Tamil Nadu'),
-        ('Telangana', 'Telangana'),
-        ('Tripura', 'Tripura'),
-        ('Uttar Pradesh', 'Uttar Pradesh'),
-        ('Uttarakhand', 'Uttarakhand'),
-        ('West Bengal', 'West Bengal')
-    ]
-
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-    applied_at = models.DateTimeField(("Applied at"),auto_now_add=True, blank=True)
-    institution_name = models.CharField(max_length=200)
-    state = models.CharField(max_length=49, choices = STATES, null=False, default = None)
-    city = models.CharField(max_length=100, null = False, default = None)
-    first_name = models.CharField(("First Name"), max_length=100, help_text="Enter your first name", null=True)
-    last_name = models.CharField(("Last Name"), max_length=100,  help_text="Enter your last name", null=True)
-    committed = models.TextField(max_length=250, null=False)
-    introduction = models.TextField(max_length=250, default=None)
-    experience = models.TextField(max_length=800, default = None)
-    expertise = models.TextField(max_length=800, default = None)
-    reasons_for_chapter = models.TextField(max_length=600)
-    phone_number = models.CharField(max_length=10)
-    email = models.EmailField(max_length=200, primary_key=True, null=False, unique=True)
-    selected = models.BooleanField(default=False)
-    send_email = models.BooleanField(default=False)
-
-    def __str__(self):
-        return "Join School/College Chapter Form: " + self.first_name + ' ' + self.last_name
-
+    def __init__(self, *args, **kwargs):
+        super(JoinChapterForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
+            # visible.field.widget.attrs['placeholder'] = visible.field.help_text
