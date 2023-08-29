@@ -225,6 +225,8 @@ h6 {
   left: 0;
   right: 0;
   z-index: 1000;
+  background: linear-gradient(to right    , black 10%, #14A44D 100%);
+
 }
 
 .navbar ul {
@@ -248,7 +250,7 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #fff;
+  color: #ffffff;
   text-transform: uppercase;
   white-space: nowrap;
   transition: 0.3s;
