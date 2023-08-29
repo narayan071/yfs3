@@ -22,21 +22,19 @@
     </div>
   </div>
   </div>
-</div>
-<section class="m-5" data-aos="fade-in">
+  <section class="m-5" data-aos="fade-in">
     <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
     <h3 style="margin: 40px 0px;" class="title"> LIVE EVENTS</h3>
     <p class="fs-5 mb-2"><h4>Explore live events</h4></p>
-    <div id="carouselExample" class="carousel slide">
+    <div id="carousel1" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center p-5">
                 <div class="card text-center shadow-lg" style="width: 30rem;">
                     <img src="{% static 'images/main-logo.png' %}" class="card-img-top" alt="event image">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">TEMPLATE CARD</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-success mt-3">Register here</a>
                     </div>
                 </div>
                 
@@ -44,7 +42,7 @@
             
           </div>
           <div class="carousel-item active"  data-bs-interval="1000">
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center p-5">
                 <div class="card text-center shadow-lg" style="width: 30rem;">
                     <img src="{% static 'images/main-logo.png' %}" class="card-img-top" alt="event image">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
@@ -57,33 +55,29 @@
             
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
           <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
           <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
 </section>
-
-
-
 <section class="m-5" data-aos="fade-in">
     <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
     <h3 style="margin: 40px 0px;" class="title"> PAST EVENTS</h3>
     <p class="fs-5 mb-2"><h4>Explore our past events</h4></p>
-    <div id="carouselExample" class="carousel slide">
+    <div id="carousel2" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center p-5">
                 <div class="card text-center shadow-lg" style="width: 30rem;">
                     <img src="{% static 'images/main-logo.png' %}" class="card-img-top" alt="event image">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">TEMPLATE CARD</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-success mt-3">Register here</a>
                     </div>
                 </div>
                 
@@ -91,28 +85,29 @@
             
           </div>
           <div class="carousel-item active"  data-bs-interval="1000">
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center p-5">
                 <div class="card text-center shadow-lg" style="width: 30rem;">
                     <img src="{% static 'images/main-logo.png' %}" class="card-img-top" alt="event image">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">TEMPLATE CARD</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      </div>
-                      <a href="#" class="btn btn-success mt-3">Register here</a>
+                    </div>
                 </div>
                 
             </div>
             
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-light" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
           <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
 </section>
+</div>
+
 {% endblock content %}
