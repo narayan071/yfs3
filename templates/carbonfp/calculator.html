@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="margin: 100px;">
+    <h1>Carbon Footprint Calculator</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="motorcycle">Motorcycle</label>
+            <input type="checkbox" name="motorcycle" id="motorcycle">
+            <small class="form-text text-muted">Check this box if you travel on a motorcycle.</small>
+        </div>
+        <div class="form-group">
+            <label for="q_motorcycle">Distance traveled (km)</label>
+            <input type="number" name="q_motorcycle" id="q_motorcycle" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="persons_motorcycle">Number of people</label>
+            <input type="number" name="persons_motorcycle" id="persons_motorcycle" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="car">Car</label>
+            <input type="checkbox" name="car" id="car">
+            <small class="form-text text-muted">Check this box if you travel in a car.</small>
+        </div>
+        <div class="form-group">
+            <label for="q_car">Distance traveled (km)</label>
+            <input type="number" name="q_car" id="q_car" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="persons_car">Number of people</label>
+            <input type="number" name="persons_car" id="persons_car" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="bus">Bus</label>
+            <input type="checkbox" name="bus" id="bus">
+            <small class="form-text text-muted">Check this box if you travel on a bus.</small>
+        </div>
+        <div class="form-group">
+            <label for="q_bus">Distance traveled (km)</label>
+            <input type="number" name="q_bus" id="q_bus" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="train">Train</label>
+            <input type="checkbox" name="train" id="train">
+            <small class="form-text text-muted">Check this box if you travel on a train.</small>
+        </div>
+        <div class="form-group">
+            <label for="q_train">Distance traveled (km)</label>
+            <input type="number" name="q_train" id="q_train" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="plane">Plane</label>
+            <input type="checkbox" name="plane" id="plane" >
+            <small class="form-text text-muted">Check this box if you travel on a plane.</small>
+        </div>
+        <div class="form-group">
+            <label for="q_plane">Number of hours</label>
+            <input type="number" name="q_plane" id="q_plane" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="ship">Ship</label>
+            <input type="checkbox" name="ship" id="ship" >
+            <small class="form-text text-muted">Check this box if you travel on a ship.</small>
+        </div>
+        <div class="form-group">
+            <label for="q_ship">Number of hours</label>
+            <input type="number" name="q_ship" id="q_ship" class="form-control">
+        </div>
+        <div>
+            <button type="submit" class="w-btn w-100 mt-4">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
