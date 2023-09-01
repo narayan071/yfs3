@@ -5,12 +5,11 @@
     <h1>Carbon Footprint Calculator Result</h1>
 
     {% if carbon_footprint %}
-        <p>Your carbon footprint is <strong>{{ carbon_footprint.total_carbon_footprint }}</strong> kg CO2e.</p>
+        <p>Your carbon footprint is <strong>{{ carbon_footprint }}</strong> kg CO2e.</p>
     {% else %}
         <p>Please calculate your carbon footprint first.</p>
     {% endif %}
 
-    <a href="/calculator.html" class="btn btn-primary">Calculate Again</a>
+    <a href="{% url 'calculate_carbon_footprint' %}" class="btn btn-primary">Calculate Again</a>
 </div>
 {% endblock content %}
-
