@@ -729,7 +729,7 @@ section {
 }
 
 .why-us .box:hover span,
-.why-us .box:hover h4,
+.why-us .box:hover h6,
 .why-us .box:hover p {
   color: #fff;
 }
