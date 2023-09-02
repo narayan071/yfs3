@@ -486,11 +486,16 @@ h6 {
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
+.why-us{
+  margin-bottom: 30px;
+}
 .why-us .box {
   padding: 50px 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   transition: all ease-in-out 0.3s;
   height: 250px;
+  background-color: #eee;
+  border-radius: 10px;
 }
 
 .why-us .box span {
@@ -555,7 +560,7 @@ h6 {
   background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(0, 0, 0, 0.9)), url("../img/cta-bg.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
-}
+} 
 
 .cta h3 {
   color: #fff;
@@ -595,6 +600,7 @@ h6 {
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
+  border-radius: 10px;
 }
 
 .services .icon-box .icon {
