@@ -69,4 +69,10 @@ class CarbonFootprintForm(forms.ModelForm):
         required=0,
         help_text="Enter the number of hours in ship."
     )
-
+    def __init__(self, *args, **kwargs):
+        super(CarbonFootprintForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            if visible.field.widget.__class__.__name__ == 'CheckboxInput':
+                pass
+            else:
+                visible.field.widget.attrs['class'] = 'form-control'

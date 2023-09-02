@@ -24,7 +24,7 @@
     </div>
       
 
-  <h3 class="title my-4">Core Team Members</h3>
+  <h3 class="title my-4" data-aos="flip-up">Core Team Members</h3>
   <table class="table table-success table-striped mx-auto" data-aos="fade-up">
     <thead class="bg-success text-white">
       <tr class="text-center">
@@ -46,7 +46,7 @@
     </tbody>
   </table>
 
-  <h3 class="title my-4">Volunteers</h3>
+  <h3 class="title my-4" data-aos="flip-up">Volunteers</h3>
   <table class="table table-success table-striped mx-auto my-3" data-aos="fade-up">
     <thead class="bg-success text-white">
       <tr class="text-center">
@@ -67,6 +67,35 @@
       {% endfor %}
     </tbody>
   </table>
+
+  <section id="events">
+    <h2 class="title mt-5" data-aos="flip-up">EVENTS</h2>
+    <div class="card mt-3" data-aos="zoom-in">
+        <div class="card-body">
+          <h3 class="card-header bg-success text-light text-center">Events Conducted by {{ chapter.institution_name }}</h3>
+          <ul class="list-group list-group-flush">
+            {% for event in events %}
+              <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>{{ event.name }}</strong><br>
+                        Date: {{ event.date }}<br><br>
+                        Description: {{ event.description }}<br>
+                    </div>
+                    <div class="col-md-6">
+                        {% if event.image %}
+                          <img src="{{ event.image.url }}" alt="{{ event.name }}" class="img-fluid">
+                        {% endif %}
+                    </div>
+                </div>
+              </li>
+            {% empty %}
+              <li class="list-group-item">No events conducted yet.</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+  </section>
 
 </div>
 
