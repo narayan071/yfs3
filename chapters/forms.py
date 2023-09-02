@@ -36,7 +36,7 @@ class JoinChapterForm(forms.ModelForm):
 
     class Meta:
         model = JoinChapterApplication  # Use the JoinChapterApplication model
-        exclude = ['selected', 'send_email', 'user', 'applied_at']
+        exclude = ['selected', 'send_email', 'user', 'applied_at', 'is_core', 'is_volunteer']
         help_texts = {
             'institution_name': ('Are you a student? If yes,mention the name of the institute'),
             'city' : ('Enter the location of your institute'),

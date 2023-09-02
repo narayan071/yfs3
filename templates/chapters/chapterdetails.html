@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="margin:100px;">
+    <div class="container my-5">
+        <div class="card" style="background-color: #008000;">
+          <div class="card-body">
+            <h2 class="card-title text-white text-center mb-3">Chapter Details</h2>
+            <h3 class="card-subtitle text-center text-white"><strong>{{ chapter.institution_name }}</strong></h3>
+            <p class="card-text text-center">Established on: {{ chapter.established_on }}</p>
+          </div>
+        </div>
+      
+        <div class="card mt-4">
+          <div class="card-body">
+            <h3 class="card-title text-center">Chapter Lead</h3>
+            <p class="card-text text-center">
+              Name -- {{ chapter.chapter_lead.first_name }}  {{ chapter.chapter_lead.last_name }}<br>
+              Email --  {{ chapter.chapter_lead.email }}
+            </p>
+          </div>
+        </div>
+    </div>
+      
+
+  <h3 class="title my-4">Core Team Members</h3>
+  <table class="table table-success table-striped mx-auto" data-aos="fade-up">
+    <thead class="bg-success text-white">
+      <tr class="text-center">
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for member in core_team_members %}
+        <tr class="text-center">
+          <td>{{ member.first_name }} {{ member.last_name }}</td>
+          <td>{{ member.email }}</td>
+        </tr>
+      {% empty %}
+        <tr class="text-center">
+          <td colspan="2">No core team members</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3 class="title my-4">Volunteers</h3>
+  <table class="table table-success table-striped mx-auto my-3" data-aos="fade-up">
+    <thead class="bg-success text-white">
+      <tr class="text-center">
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for volunteer in volunteers %}
+        <tr class="text-center">
+          <td>{{ volunteer.first_name }} {{ volunteer.last_name }}</td>
+          <td>{{ volunteer.email }}</td>
+        </tr>
+      {% empty %}
+        <tr class="text-center">
+          <td colspan="2">No volunteers</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

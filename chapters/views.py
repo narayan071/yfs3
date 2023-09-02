@@ -91,3 +91,21 @@ def join_chapter(request):
 
     context['form'] = form
     return render(request, 'chapters/joinchapter.html', context)
+
+
+def chapterdetails(request, chapter_id):
+    chapter = get_object_or_404(AllChapter, pk=chapter_id)
+
+    core_team_members = JoinChapterApplication.objects.filter(institution_name=chapter.institution_name, is_core=True)
+    volunteers = JoinChapterApplication.objects.filter(institution_name=chapter.institution_name, is_volunteer=True)
+
+    print("core_team_members of chapter", chapter, "are \n", core_team_members)
+
+    context = {
+        "pname": "Chapter Details",
+        "chapter": chapter,
+        "core_team_members": core_team_members,
+        "volunteers": volunteers,
+    }
+
+    return render(request, 'chapters/chapterdetails.html', context)
