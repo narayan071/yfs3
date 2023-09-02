@@ -77,7 +77,7 @@ class NewChapterApplication(models.Model):
     #     super().save(*args, **kwargs)
 
     def __str__(self):
-        return "New Chapter Form: " + self.institution_name
+        return self.institution_name
 
 class AllChapter(models.Model):
     institution_name = models.CharField(max_length=220)
@@ -122,7 +122,7 @@ class JoinChapterApplication(models.Model):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     applied_at = models.DateTimeField(("Applied at"),auto_now_add=True, blank=True)
-    institution_name = models.CharField(max_length=200)
+    institution_name = models.ForeignKey(NewChapterApplication, on_delete=models.CASCADE)
     state = models.CharField(max_length=49, choices = STATES, null=False, default = None)
     city = models.CharField(max_length=100, null = False, default = None)
     first_name = models.CharField(("First Name"), max_length=100, help_text="Enter your first name", null=True)

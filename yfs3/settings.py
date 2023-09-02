@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'events',
     'joinus',
     'chapters',
+    'carbonfp',
 ]
 
 MIDDLEWARE = [

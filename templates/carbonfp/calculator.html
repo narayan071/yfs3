@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="margin: 100px;">
+    <h1>Carbon Footprint Calculator</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit" class="w-btn w-100 mt-4">Calculate</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
