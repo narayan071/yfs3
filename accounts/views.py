@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-
+from chapters.models import NewChapterApplication
 # Create your views here.
 
 
@@ -66,7 +66,9 @@ def signout(request):
     return render(request, 'user/signin.html',context)
 
 def profile(request):
+    chapters = NewChapterApplication.objects.filter(user=request.user)
     context={
-        "pname": "profile"
+        "pname": "profile",
+        "chapters" : chapters
     }
     return render(request,'user/profile.html',context)
