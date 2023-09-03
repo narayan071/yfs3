@@ -50,7 +50,13 @@
                         <p class="fw-bold">Chapter since : {{ chapter.applied_at }} </p>
                         {% endfor %}
                         <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#edit_chapter">Edit Chapter</button>
-                        {% else %}
+                    {% elif members%}
+                        {% for member in members  %}
+                            <p class="fw-bold">Institution : {{ member.institution_name }} </p>
+                            <p class="fw-bold">Location : {{ member.city }}, {{member.state}} </p>
+                            <p class="fw-bold">Chapter since : {{ member.applied_at }} </p>
+                        {% endfor %}
+                    {% else %}
                         <h5>No Chapter Joined Yet !!!</h5>
                         <a class="w-btn" href="{% url 'join-chapter' %}">Join Chapter</a>
                         <span>or</span>

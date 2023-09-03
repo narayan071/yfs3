@@ -76,3 +76,4 @@ class CarbonFootprintForm(forms.ModelForm):
                 pass
             else:
                 visible.field.widget.attrs['class'] = 'form-control'
+
