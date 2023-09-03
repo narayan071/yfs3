@@ -50,6 +50,7 @@
                         <p class="fw-bold">Chapter since : {{ chapter.applied_at }} </p>
                         {% endfor %}
                         <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#edit_chapter">Edit Chapter</button>
+                        <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#add_event">Add Event</button>
                     {% elif members%}
                         {% for member in members  %}
                             <p class="fw-bold">Institution : {{ member.institution_name }} </p>
@@ -96,6 +97,23 @@
         </div>
         <div class="modal-body">
           ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="modal fade" id="add_event" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header card-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Chapter</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         {{ add_event.as_p }}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
