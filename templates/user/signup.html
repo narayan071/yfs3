@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+{% load socialaccount %}
 <div class="container py-5 mt-5">
     <div class="row">
         <div class="col-md-6 mx-auto">
@@ -41,7 +42,8 @@
                         </div>
                         <div class="mb-1">
                             <input type="submit" value ="SIGN-UP" class="w-btn w-100">
-                        </div>
+                        </div><br><h5>or</h5><br><a href="{% provider_login_url "google" %}?next=/">Sign In with Google</a>
+
                     </form>
                 </div>
             </div>

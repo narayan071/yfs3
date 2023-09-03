@@ -3,6 +3,7 @@
 {% block pname %}{{pname}}{% endblock pname %}
 {% block content %}
 <div class="container py-5 mt-5">
+    {% load socialaccount %}
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="card shadow-lg"  data-aos="zoom-in">
@@ -28,6 +29,10 @@
 
                         <div class="mb-1">
                             <input type="submit" value ="Sign-in" class="w-btn w-100">
+                        </div>
+                        <h4>Or</h4>
+                        <div class="mb-1">
+                            <a href="{% provider_login_url "google" %}?next=/">Sign Up with Google</a>
                         </div>
                     </form>
                 </div>
