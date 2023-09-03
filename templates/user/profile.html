@@ -52,9 +52,9 @@
                         <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#edit_chapter">Edit Chapter</button>
                         {% else %}
                         <h5>No Chapter Joined Yet !!!</h5>
-                        <button class="w-btn">Join Chapter</button>
+                        <a class="w-btn" href="{% url 'join-chapter' %}">Join Chapter</a>
                         <span>or</span>
-                        <button class="w-btn">Create Chapter</button>
+                        <a class="w-btn"href="{% url 'new-chapter' %}">Create Chapter</a>
                     {% endif %}
                 </div>
             </div>
