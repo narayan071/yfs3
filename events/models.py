@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Events(models.model):
+class Events(models.Model):
     EVENT_TYPE = [
         ('Live events', 'Live events'),
         ('Corporate workshops', 'Corporate workshops'),
