@@ -29,6 +29,7 @@ urlpatterns = [
     path('user/', include('accounts.urls')),
     path('chapters/', include('chapters.urls')),
     path('carbonfp/', include('carbonfp.urls')),
+    path("accounts/", include("allauth.urls")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

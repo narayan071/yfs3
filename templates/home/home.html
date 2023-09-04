@@ -30,21 +30,23 @@
       </div>
     </div>
     <div class="hero-container" data-aos="fade-up">
-      <h1 class="text">BE THE CHANGE YOU
-        WANT TO SEE</h1>
-      <a href="#why-us" class="btn-get-started">what we do</a>
-      <a href="#" class="btn-get-started">Donate</a>
+      <h1 class="text">BE THE CHANGE YOU WANT TO SEE</h1>
+      <div class="col-md-4">
+      <a href="{% url 'calculate_carbon_footprint' %}" class="m-2 w-btn text-white btn-primary btn-lg btn-responsive">Calculate Carbon Footprint</a><br>
+      <a href="#" class="m-2  w-btn btn-secondary btn-lg text-white btn-responsive">Donate</a>
+    </div>
     </div>
   </section>
+  
   <main id="main">
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="container m-5">
 
         <div class="row">
           <div class="col-md-6 video-box d-flex justify-content-center align-items-stretch">
-            <img class="shadow-lg" src="{% static 'images/natureppl.jpg' %}" style = "max-width: 100%; border-radius: 50px;" alt="nature people">
+            <img src="{% static 'images/natureppl.jpg' %}" style="max-width: 100%; border-radius: 50px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);" alt="nature people">
           </div>
 
           <div class="col-md-6 d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
@@ -272,7 +274,7 @@
     <!-- ======= Data Section ======= -->
     <div class="text-light m-5 p-5 join-us image-fluid" style="border-radius: 30px; background: url('{% static 'images/home/join-us-bg.png' %}'); background-size: cover; box-shadow: 10px 10px 20px grey; display: flex; flex-direction: column; justify-content: center; position: relative;" data-aos="zoom-in">
       <h2 class="mt-3" style="text-align: center;">Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it is the only thing that ever has.</h2>
-      <center class="my-4"><a class="joinbtn" href="{% url 'joinus' %}">JOIN US</a></center>
+      <center class="my-4"><a class="joinbtn" href="{% url 'chapters' %}">JOIN US</a></center>
     </div>
     
     

@@ -1,6 +1,6 @@
 from . import models
 from django import forms
-from .models import NewChapterApplication, JoinChapterApplication
+from .models import NewChapterApplication, JoinChapterApplication, Event
 
 class NewChapterForm(forms.ModelForm):
     class Meta:
@@ -36,7 +36,7 @@ class JoinChapterForm(forms.ModelForm):
 
     class Meta:
         model = JoinChapterApplication  # Use the JoinChapterApplication model
-        exclude = ['selected', 'send_email', 'user', 'applied_at']
+        exclude = ['selected', 'send_email', 'user', 'applied_at', 'is_core', 'is_volunteer']
         help_texts = {
             'institution_name': ('Are you a student? If yes,mention the name of the institute'),
             'city' : ('Enter the location of your institute'),
@@ -54,3 +54,21 @@ class JoinChapterForm(forms.ModelForm):
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
             # visible.field.widget.attrs['placeholder'] = visible.field.help_text
+
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields =['name', 'date', 'description', 'image']
+        help_texts = {
+            'date': ('(in format yyyy-mm-dd)'),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(EventForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            if visible.name != 'date':
+                visible.field.widget.attrs['class'] = 'form-control'
+
+        # Specify the widget for the date field
+        self.fields['date'].widget = forms.DateInput(attrs={'class': 'form-control'})

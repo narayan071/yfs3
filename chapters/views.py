@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .forms import NewChapterForm, JoinChapterForm
 from django.contrib import messages
-from .models import AllChapter, NewChapterApplication, JoinChapterApplication
+from .models import AllChapter, NewChapterApplication, JoinChapterApplication, Event
 from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -91,3 +91,22 @@ def join_chapter(request):
 
     context['form'] = form
     return render(request, 'chapters/joinchapter.html', context)
+
+
+def chapterdetails(request, chapter_id):
+    chapter = get_object_or_404(AllChapter, pk=chapter_id)
+
+    core_team_members = JoinChapterApplication.objects.filter(institution_name=chapter.institution_name, is_core=True)
+    volunteers = JoinChapterApplication.objects.filter(institution_name=chapter.institution_name, is_volunteer=True)
+
+    events = Event.objects.filter(chapter=chapter)
+
+    context = {
+        "pname": "Chapter Details",
+        "chapter": chapter,
+        "core_team_members": core_team_members,
+        "volunteers": volunteers,
+        "events": events,
+    }
+
+    return render(request, 'chapters/chapterdetails.html', context)

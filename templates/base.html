@@ -38,10 +38,6 @@
               </li> {% endcomment %}
                 <li class="nav-item my-0">
                 <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="https://www.tasq.co.in/home">CAREER</a>
-              </li>
-                <li class="nav-item my-0">
-                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'calculate_carbon_footprint' %}">CARBON FOOTPRINT</a>
-              </li>
                 <li class="nav-item my-0">
                 <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'chapters' %}">chapters</a>
               </li>
@@ -83,7 +79,7 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
-    <footer data-aos="fade-up">
+    <footer>
       <div id="logo">
         <img
           src="{% static 'images/main-logo.png' %}"
@@ -93,34 +89,35 @@
       </div>
       <div id="socials">
       <p class="social-desc">Connect for more updates</p>
-        <a href="https://www.facebook.com/youthforsustainabilityindia/"><i class="social-icons fab fa-facebook"></i></a>
-        <a href="https://www.linkedin.com/company/38126458"><i class="social-icons fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/yfs.in"><i class="social-icons fab fa-instagram"></i></a>
-        <a href="https://www.twitter.com/yfs_india"><i class="social-icons fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/youthforsustainabilityindia/" target="_blank"><i class="social-icons fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/38126458" target="_blank"><i class="social-icons fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/yfs.in" target="_blank"><i class="social-icons fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com/yfs_india" target="_blank"><i class="social-icons fab fa-twitter"></i></a>
       </div>
       <div id="links">
         <div class="explore">
           <p>Explore</p>
           <ul>
-            <li><a href="#">About Us</a></li>
+            <li><a href="{% url 'home' %}#about">About Us</a></li>
+            <li><a href="{% url 'calculate_carbon_footprint' %}">Carbon footprint calculator</a></li>
             <li><a href="#">Team</a></li>
-            <li><a href="#">What we do</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{% url 'home' %}#services">What we do</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
           </ul>
         </div>
         <div class="more">
           <p>More</p>
           <ul>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">SESSIONS</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="{% url 'events' %}">Project</a></li>
+            <li><a href="{% url 'events' %}">SESSIONS</a></li>
+            <li><a href="https://www.tasq.co.in/home">CAREER</a></li>
             <li><a href="#">Donate</a></li>
           </ul>
         </div>
         <div class="support">
           <p>Support</p>
           <ul>
-            <li><a href="contact">Contact us</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
             <li><a href="#">Terms of Use</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
@@ -141,7 +138,7 @@
       </div>
       <div id="copyright">
         <p align="center">
-          All Content © Youth for substainability 2021 . All Rights Reserved.
+          All Content © Youth for substainability 2023 . All Rights Reserved.
         </p>
       </div>
     </footer>

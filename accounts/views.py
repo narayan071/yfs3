@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from chapters.models import NewChapterApplication, JoinChapterApplication
+from chapters.forms import  EventForm
 
 # Create your views here.
 
@@ -66,7 +68,15 @@ def signout(request):
     return render(request, 'user/signin.html',context)
 
 def profile(request):
+    chapters = NewChapterApplication.objects.filter(user=request.user)
+    members = JoinChapterApplication.objects.filter(user = request.user)
+    add_event = EventForm()
+    add_event.chapter = chapters[0]
     context={
-        "pname": "profile"
+        "pname": "profile",
+        "chapters" : chapters,
+        "members" : members,
+        "add_event" : add_event
     }
     return render(request,'user/profile.html',context)
+

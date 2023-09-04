@@ -7,41 +7,119 @@
             <div class="card m-1">
                 <div class="card-header">
                     <div class="border border-1 rounded-5 text-center">
-                        <h2 class="my-auto">header</h2>
+                        <h2 class="my-auto">Header</h2>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3 class="my-auto">body</h3>
+                    <h3 class="my-auto">Body</h3>
                 </div>
             </div>
         </div>
         <div class="col-md-9">
             <div class="card m-1">
-                <div class="card-header"><h3 class="my-auto">biodata</h3></div>
+                <div class="card-header d-flex justify-content-between">
+                    <h3 class="my-auto d-inline-block">Bio-Data</h3>
+                    <a href="" class="my-auto" data-bs-toggle="modal" data-bs-target="#edit_profile"><i class="fa-solid fa-user-pen" style="color: #ffffff;"></i></a>
+
+                </div>
                 <div class="card-body">
-                    <h5>
-                        <table class="table-borderless table-sm" style="width:100%">
-                            <tr>
-                                <td>Name: {{user.first_name}}</td>
-                                <td>Last: {{user.last_name}}</td>
-                            </tr>
-                            <tr>
-                                <td>Email: {{user.email}}</td>
-                            </tr>
-                            
-                        </table>
-                    </h5>
+                        <p>
+                            <table class="table-borderless table-sm" style="width:100%">
+                                <tr>
+                                    <td class="fw-bold">First Name : {{user.first_name}}</td>
+                                    <td class="fw-bold">Last Name : {{user.last_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Username : {{user.username}}</td>
+                                    <td class="fw-bold">Email : {{user.email}}</td>
+                                </tr>
+                            </table>
+                        </p>
                 </div>
             </div>
             <div class="card m-1 mt-3">
                 <div class="card-header">
-                    <h3>another card</h3>
+                    <h3 class="my-auto">Chapter</h3>
                 </div>
                 <div class="card-body">
-                    another card's body
+                    {% if chapters %}
+                        {% comment %}  {% endcomment %}
+                        {% for chapter in chapters %}
+                        <p class="fw-bold">Institution : {{ chapter.institution_name }} </p>
+                        <p class="fw-bold">Location : {{ chapter.city }}, {{chapter.state}} </p>
+                        <p class="fw-bold">Chapter since : {{ chapter.applied_at }} </p>
+                        {% endfor %}
+                        <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#edit_chapter">Edit Chapter</button>
+                        <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#add_event">Add Event</button>
+                    {% elif members%}
+                        {% for member in members  %}
+                            <p class="fw-bold">Institution : {{ member.institution_name }} </p>
+                            <p class="fw-bold">Location : {{ member.city }}, {{member.state}} </p>
+                            <p class="fw-bold">Chapter since : {{ member.applied_at }} </p>
+                        {% endfor %}
+                    {% else %}
+                        <h5>No Chapter Joined Yet !!!</h5>
+                        <a class="w-btn" href="{% url 'join-chapter' %}">Join Chapter</a>
+                        <span>or</span>
+                        <a class="w-btn"href="{% url 'new-chapter' %}">Create Chapter</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="modal fade" id="edit_profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content " style="rounded-top">
+        <div class="modal-header card-header" >
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Profile</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-block">
+            <input type="text" class="form-control mb-3" placeholder="First Name">
+            <input type="text" class="form-control mb-3" placeholder="Last Name">
+            <input type="text" class="form-control mb-3" placeholder="Username">
+            <input type="text" class="form-control mb-3" placeholder="Email">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="edit_chapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header card-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Chapter</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="modal fade" id="add_event" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header card-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Chapter</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         {{ add_event.as_p }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock content %}

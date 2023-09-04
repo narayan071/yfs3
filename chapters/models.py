@@ -85,7 +85,7 @@ class AllChapter(models.Model):
     chapter_lead = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
     established_on = models.DateField(("Chapter Estd. On"),auto_now_add=True)
     def __str__(self):
-        return f"{self.institution_name}"
+        return self.institution_name
 
 class JoinChapterApplication(models.Model):
 
@@ -136,6 +136,19 @@ class JoinChapterApplication(models.Model):
     email = models.EmailField(max_length=200, primary_key=True, null=False, unique=True)
     selected = models.BooleanField(default=False)
     send_email = models.BooleanField(default=False)
+    is_core = models.BooleanField(default=False)
+    is_volunteer = models.BooleanField(default=True)
 
     def __str__(self):
-        return "Join School/College Chapter Form: " + self.first_name + ' ' + self.last_name
+        return self.first_name + ' ' + self.last_name
+
+
+
+class Event(models.Model):
+    chapter = models.ForeignKey(AllChapter, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    date = models.DateField()
+    description = models.TextField()
+    image = models.ImageField(upload_to='event_images/', null=True, blank=True) 
+    def __str__(self):
+        return self.name

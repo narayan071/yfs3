@@ -34,6 +34,7 @@ def calculate_carbon_footprint(request):
 
             context = {
                 "carbon_footprint": total_carbon_footprint,
+                "pname":'cfpresult',
             }
             return render(request, "carbonfp/result.html", context)
     else:
@@ -41,5 +42,6 @@ def calculate_carbon_footprint(request):
 
     context = {
         "form": form,
+        'pname':"calculator",
     }
     return render(request, "carbonfp/calculator.html", context)
