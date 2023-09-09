@@ -19,19 +19,31 @@
         {% block links %}{% endblock links %}
 </head>
 <body class="body">
-  <nav id="myNav" class="navbar navbar-expand-lg py-0 mb-5 shadow-lg" style="background-color: black">
+  <nav id="myNav" class="navbar navbar-expand-lg py-0 mb-5" style="background-color: black">
         <div class="container-fluid">
-          <div class="p-2"><img src="{% static 'images/main-logo.png' %}" alt="logo"></div>
+          <div class="p-1"><img src="{% static 'images/main-logo.png' %}" alt="logo"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
           </button>
           <div class="collapse navbar-collapse" style = "height:100%" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100 text-white">
-              <li class="nav-item" style="height: 100%;">
-                <a class="nav-link mx-1" aria-current="page" style="padding-top:auto; padding-bottom:auto;" href="{% url 'home' %}">Home</a>
+              <li class="nav-item dropdown" style="height: 100%;">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{% url 'home' %}" id="dropdown-link">Home</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-black" href="{% url 'home' %}">Home</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'home' %}#about">About us</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'home' %}#services">Our work</a></li>
+                </ul>
               </li>
-                <li class="nav-item my-0">
-                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'events' %}">SESSIONS</a>
+              <li class="nav-item my-0 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">sessions</a>
+                <ul class="dropdown-menu text-center">
+                  <li><a class="dropdown-item text-black" href="{% url 'events' %}">events</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'events' %}#explore">live events</a></li>
+                  <li><a class="dropdown-item text-black " href="{% url 'events' %}#corporate">corporate workshops</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'events' %}#past">past events</a></li>
+
+                </ul>
               </li>
                 {% comment %} <li class="nav-item my-0">
                 <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'blogs' %}">Blog</a>
@@ -142,6 +154,19 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var eventsDropdownLink = document.getElementById("dropdown-link");
+        var dropdownMenu = eventsDropdownLink.nextElementSibling;
+        eventsDropdownLink.addEventListener("click", function (e) {
+          e.preventDefault();
+      
+          dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+      });
+      </script>
+      
       <!-- Vendor JS Files -->
   <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}" ></script>
   <script src="{% static 'vendor/aos/aos.js' %}"></script>
