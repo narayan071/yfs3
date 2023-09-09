@@ -22,9 +22,11 @@
   <nav id="myNav" class="navbar navbar-expand-lg py-0 mb-5" style="background-color: black">
         <div class="container-fluid">
           <div class="p-1"><img src="{% static 'images/main-logo.png' %}" alt="logo"></div>
+          
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
           </button>
+          
           <div class="collapse navbar-collapse" style = "height:100%" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100 text-white">
               <li class="nav-item dropdown" style="height: 100%;">
@@ -71,12 +73,12 @@
                 </ul>
               </li>
               {% else %}
-            <li class="nav-item my-0">
-            <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signin' %}">LOGIN</a>
-          </li>
-            <li class="nav-item my-0">
-            <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signup' %}">SIGNUP</a>
-          </li>
+              <li class="nav-item my-0">
+              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signin' %}">LOGIN</a>
+              </li>
+              <li class="nav-item my-0">
+              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signup' %}">SIGNUP</a>
+              </li>
               {% endif %}
 
             </ul>
