@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% load socialaccount %}
+<div class="container py-5 mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow "   data-aos="zoom-in">
+                <div class="card-header bg-success text-white text-center">
+                    <h3 class="my-auto fw-bolder">Sign Up</h3>
+                </div>
+                <div class="card-body">
+                    {% for message in messages %}
+                        <p class={{message.tags}}>{{message}}</p>
+                    {% endfor %}
+                    <form action="{% url 'signup' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="mb-1">
+                            <label for="">First Name</label>
+                            <input type="text" name = "first_name" class="form-control" required>
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Last Name</label>
+                            <input type="text" name = "last_name" class="form-control" required>
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Username</label>
+                            <input type="text" name = "username" class="form-control" required>
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Email</label>
+                            <input type="email" name = "email" class="form-control" required>
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Password</label>
+                            <input type="password" name = "password" class="form-control" required>
+                        </div>
+                        <div class="mb-1">
+                            <label for="">Confirm Password</label>
+                            <input type="password" name = "password2" class="form-control" required>
+                        </div>
+                        <div class="mb-1">
+                            <input type="submit" value ="SIGN-UP" class="w-btn w-100">
+                        </div><br><h5 class="text-center">Or</h5><br><a class="mb-1 w-btn d-flex justify-content-center" href="{% provider_login_url "google" %}?next=/"><span><i class="fa-brands fa-google fa-2xl" style="color: #000000;"></i></span> Sign In with Google</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

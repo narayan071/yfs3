@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block pname %}{{pname}}{% endblock pname %}
+{% block content %}
+<div class="container py-5 mt-5">
+    {% load socialaccount %}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow-lg"  data-aos="zoom-in">
+                <div class="card-header bg-success text-white text-center">
+                    <h3 class="my-auto fw-bolder">Log In</h3>
+                </div>
+                <div class="card-body">
+                    {% for message in messages %}
+                        <p class={{message.tags}}>{{message}}</p>
+                    {% endfor %}
+                    <form action="{% url 'signin' %}" method="POST">
+                        {% csrf_token %}
+
+                        <div class="mb-1">
+                            <label for="">Username</label>
+                            <input type="text" name = "username" class="form-control" required>
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="">Password</label>
+                            <input type="password" name = "password" class="form-control" required>
+                        </div>
+
+                        <div class="mb-1">
+                            <input type="submit" value ="Sign-in" class="w-btn w-100">
+                        </div>
+                        <h4 class="text-center">Or</h4>
+                        <div class="mb-1 d-flex justify-content-center"> 
+                            <a class="w-btn" href="{% provider_login_url "google" %}?next=/"><span><i class="fa-brands fa-google fa-2xl" style="color: #000000;"></i></span> Sign Up with Google</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

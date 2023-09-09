@@ -1,0 +1,185 @@
+{% comment %} this is base html to be included in all other pages (include {% extends 'base.html' %} in all other files){% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}{% endblock head %}
+  {% block meta_tags %}{% endblock meta_tags %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>YFS || {{pname}}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+        {% block links %}{% endblock links %}
+</head>
+<body class="body">
+  <nav id="myNav" class="navbar navbar-expand-lg py-0 mb-5" style="background-color: black">
+        <div class="container-fluid">
+          <div class="p-1"><img src="{% static 'images/main-logo.png' %}" alt="logo"></div>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+          </button>
+          
+          <div class="collapse navbar-collapse" style = "height:100%" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100 text-white">
+              <li class="nav-item dropdown" style="height: 100%;">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{% url 'home' %}" id="dropdown-link">Home</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-black" href="{% url 'home' %}">Home</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'home' %}#about">About us</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'home' %}#services">Our work</a></li>
+                </ul>
+              </li>
+              <li class="nav-item my-0 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-link">sessions</a>
+                <ul class="dropdown-menu text-center">
+                  <li><a class="dropdown-item text-black" href="{% url 'events' %}">events</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'events' %}#explore">live events</a></li>
+                  <li><a class="dropdown-item text-black " href="{% url 'events' %}#corporate">corporate workshops</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'events' %}#past">past events</a></li>
+
+                </ul>
+              </li>
+                {% comment %} <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'blogs' %}">Blog</a>
+              </li> {% endcomment %}
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="https://www.tasq.co.in/home">CAREER</a>
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'chapters' %}">chapters</a>
+              </li>
+                {% comment %} <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'contact' %}">Contact us</a>
+              </li> {% endcomment %}
+                <li class="nav-item my-0">
+                <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'contact' %}">Contact us</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+                  Welcome, {{user.first_name}}
+                </a>
+                <ul class="dropdown-menu">
+                  {% comment %} <li><a class="dropdown-item " href="{% url 'profile' %}">Profile</a></li> {% endcomment %}
+                  <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                  <li><a class="dropdown-item" href="{% url 'signout' %}">Log out</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li class="nav-item my-0">
+              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signin' %}">LOGIN</a>
+              </li>
+              <li class="nav-item my-0">
+              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signup' %}">SIGNUP</a>
+              </li>
+              {% endif %}
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    {% block content %}
+    
+    
+    {% endblock content %}
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    <footer>
+      <div id="logo">
+        <img
+          src="{% static 'images/main-logo.png' %}"
+          alt="footer-logo"
+          class="footer-logo"
+        />
+      </div>
+      <div id="socials">
+      <p class="social-desc">Connect for more updates</p>
+        <a href="https://www.facebook.com/youthforsustainabilityindia/" target="_blank"><i class="social-icons fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/38126458" target="_blank"><i class="social-icons fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/yfs.in" target="_blank"><i class="social-icons fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com/yfs_india" target="_blank"><i class="social-icons fab fa-twitter"></i></a>
+      </div>
+      <div id="links">
+        <div class="explore">
+          <p>Explore</p>
+          <ul>
+            <li><a href="{% url 'home' %}#about">About Us</a></li>
+            <li><a href="{% url 'calculate_carbon_footprint' %}">Carbon footprint calculator</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="{% url 'home' %}#services">What we do</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        <div class="more">
+          <p>More</p>
+          <ul>
+            <li><a href="{% url 'events' %}">Project</a></li>
+            <li><a href="{% url 'events' %}">SESSIONS</a></li>
+            <li><a href="https://www.tasq.co.in/home">CAREER</a></li>
+            <li><a href="#">Donate</a></li>
+          </ul>
+        </div>
+        <div class="support">
+          <p>Support</p>
+          <ul>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="subscription">
+        <p>Subscribe to get the latest updates</p>
+        <form action="/mailing-list" method="POST">
+          {% csrf_token %}
+          <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your email"
+          />
+          <input type="submit" value="Subscribe" id="subscribe" />
+        </form>
+      </div>
+      <div id="copyright">
+        <p align="center">
+          All Content © Youth for substainability 2023 . All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var eventsDropdownLink = document.getElementById("dropdown-link");
+        var dropdownMenu = eventsDropdownLink.nextElementSibling;
+        eventsDropdownLink.addEventListener("click", function (e) {
+          e.preventDefault();
+      
+          dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+      });
+      </script>
+      
+      <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}" ></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}" ></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}" ></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}" ></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}" ></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/base.js' %}"></script>
+
+  </body>
+</html>

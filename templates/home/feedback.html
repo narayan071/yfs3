@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_tags %}
+<meta property="og:title" content="Contact us at Youth for Sustainability">
+<meta property="og:url" content="https://youthforsustainability.in/">
+<meta property="og:image" content="{% static 'img/YFS_logo_sqr_or.png' %}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:locale" content="en">
+
+<meta name="twitter:title" content="Contact Us at Youth for Sustainability India">
+<meta name="twitter:description" content="Contact us form">
+<meta name="twitter:site" content="@yfs_india">
+<meta name="twitter:domain" content="youthforsustainability.in">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{% static 'img/main-logo.png' %}">
+<meta name="twitter:image:alt" content="Youth for Sustainability India">
+{% endblock meta_tags %}
+
+{% block content %}
+<section id="contact">
+<center>
+    <br><br><br><br>
+    <div class="contact-us feedback container mt-5">
+        <div class="card rounded shadow col-md-6" style="margin: 3rem" data-aos="flip-up">
+            <div class="card-header bg-success text-center">
+                <h1 class="display-6 mt-1 text-white">
+                    Find more ways to help!
+                </h1>
+            </div>
+            <div class="card-body text-center">
+                    Youth for Sustainability is a movement to engage with the youth for United Nations Sustainable Development Goals. We commit to act before we react.
+                    <br />
+                    There are many ways to join us and support our mission. Contact us to find out more about volunteer opportunities, fundraising events, and ways that you can get our message to your friends and family. You can host us for a summit at your place where we equip you with the necessary toolkit for Sustainable Development.
+                <form action="" method="POST">
+                    {% if messages %}
+                    {% for message in messages %}
+                        <p class="alert alert-{{message.tags}} text-center mt-2">{{message}}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="error">
+                        <p class="text-danger alert alert-danger">Please fix the errors and try again...</p>
+                    </div>
+                    {% endif %}
+                    {% for field in form %}
+                    <label for="{{field.name}}" class="form-label"><strong>{{field.label}}</strong>: </label>
+                    {{field}}
+                    <p class="text-danger my-2">
+                        {{field.errors | striptags}}
+                    </p>
+                    {% endfor %}
+                    <button type="submit" class="w-btn w-100">Submit</button>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <p class="text-success">
+                    <a class="w-btn btn-sm" href="https://chat.whatsapp.com/JzMCD4Z7R2q9xBIhcB40M0">
+                        <i class="fab fa-whatsapp"></i>
+                        Contact us via Whatsapp
+                    </a>
+                    <a class="w-btn btn-sm mx-2" href="mailto:punyasloka@humancircle.in">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Contact us via Email
+                    </a>
+                </p>
+                <p class="text-secondary mt-2">Phone: 8917630076</p>
+            </div>
+        </div>
+    </div>
+</center>
+</section>
+{% endblock content %}

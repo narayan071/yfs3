@@ -1,0 +1,27 @@
+body{
+    background: url('https://source.unsplash.com/P4lJjr7r1tQ') rgba(0, 0, 0, 0.3);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.contact-us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.card{
+    opacity: .75;
+}
+.card-body{
+    line-height: 1.75rem;
+    font-size: 1.150em;
+}

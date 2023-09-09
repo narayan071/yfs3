@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="card" style="margin:100px 100px 10px" data-aos="flip-up"> 
+        <div class="card-header">
+            <h1 class="my-auto">Carbon Footprint Calculator Result</h1>
+        </div>
+        <div class="card-body">
+
+            {% if carbon_footprint %}
+                <p class="my-3">Your carbon footprint is <strong>{{ carbon_footprint }}</strong> kg CO2e.</p>
+            {% else %}
+                <p>Please calculate your carbon footprint first.</p>
+            {% endif %}
+
+        </div>
+    </div>
+<center>    <a href="{% url 'calculate_carbon_footprint' %}" class="w-btn btn-primary">Calculate Again</a>
+</center>
+</div>
+{% endblock content %}

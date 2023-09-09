@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="p-5 bg-light mt-5 rounded-3 hero-section">
+    <div class="container-fluid pb-5">
+        <div class="about-us-title"  data-aos="flip-up">
+            <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
+            <h3 class="title" >JOIN US TODAY</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <h1 class="display-5 fw-bold fs-1 mb-2" data-aos="fade-up">We need you !</h1>        
+                <p class="col-md-8 fs-5 mb-4 max-width: 100%;" style="line-height: 2.25rem"  data-aos="fade-up">
+                    To make a visible change around you, you need a solid team that beleives in preservations strongly as we do. So come along, join us in this long but beautiful journey of fixing the planet.
+                </p>
+              <a href="#forms" class="w-btn" data-aos="fade-up">Start Now</a>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <img style="max-width:100%; border-radius:10px; box-shadow: 10px 10px 5px #000" src="{% static 'images/volunteers.jpg' %}" alt="volunteers">
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="joinus-hero bg-dark" data-aos="fade-up">
+    <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" style="max-width: 800px; margin: 0 auto; height: 400px; overflow: hidden;">
+            <div class="carousel-item active" style="position: relative; text-align: center;">
+                <img src="{% static 'images/home/YfS_BG.jpg' %}" class="carousel-img" alt="volunteers image" style="max-width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+
+            </div>
+            <div class="carousel-item" style="position: relative; text-align: center;">
+                <img src="{% static 'images/home/YfS-BG2.jpg' %}" class="carousel-img" alt="volunteers image" style="max-width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+
+            </div>
+            <div class="carousel-item" style="position: relative; text-align: center;">
+                <img src="{% static 'images/home/YfS_BG3.jpg' %}" class="carousel-img" alt="volunteers image" style="max-width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+</section>
+
+<section class="container" data-aos="fade-up">
+    <div class="about-us-title">
+        <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
+        <h3 style="margin: 40px 0px;" class="title">OUR VOLUNTEERS</h3>
+    </div>
+    <h1 class="display-6 fw-bold mb-2">Testimonials</h1>
+    <div class="testimonial-slider rounded-3 mt-5">
+        <div id="testimonialOptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialOptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#testimonialOptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#testimonialOptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner py-5 text-center" style="background-color: #b8e888; box-shadow: 13px 13px 13px 13px #b8e888">
+                <div class="carousel-item active">
+                    <i class="fas fa-quote-left fs-1 text-danger"></i>                    
+                    <figure class="text-cent col-md-6 offset-md-3 mt-4">
+                        <blockquote class="blockquote">
+                            <p>
+                                YfS gave me a platform to do something for a cause I strongly believe, met some amazing people who're more like family now, and made countless memories and learnt a lot of things.
+                            </p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mt-2">Lipsa</figcaption>
+                    </figure>
+                </div>
+                <div class="carousel-item">
+                    <i class="fas fa-quote-left fs-1 text-danger"></i>                    
+                    <figure class="col-md-6 offset-md-3 mt-4">
+                        <blockquote class="blockquote">
+                            <p>
+                                YfS has not just been an organisation for me, it was more like a school and a family, where I was learning new things everyday, and I've grown so much as a person in this organisation.
+                            </p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mt-2">Abhilash</figcaption>
+                    </figure>
+                </div>
+                <div class="carousel-item">
+                    <i class="fas fa-quote-left fs-1 text-danger"></i>
+                    <figure class="col-md-6 offset-md-3 mt-4">
+                        <blockquote class="blockquote">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mt-2">Jonh Son</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="join-us-forms mt-5 h-100" id="forms"  data-aos="fade-up">
+    <div class="container">
+        <div class="about-us-title">
+            <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
+            <h3 style="margin: 40px 0px;" class="title">FORMS</h3>
+        </div>
+        <h1 class="display-6 fw-bold mb-4">Select your requirement</h1>
+    </div>
+    <div class="container col-md-9 md-offset-0">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3 shadow" data-aos="fade-left">
+                        <img src="{% static 'svg/individual.svg' %}" alt="" class="card-img-top w-80 img-fluid" style="max-height: 200px;">
+                        <div class="card-header text-center bg-success">
+                            <h2 class="text-white my-auto">Individual Contributor Form</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                This form is for people who want to join YfS as an Individual volunteer. Please ensure that your institution doesn't already have a chapter to join before proceeding.
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="w-btn w-100 mt-4">Go to form</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3 shadow" data-aos="fade-up">
+                        <img src="{% static 'svg/data_dashboard.svg' %}" alt="" class="card-img-top" style="max-height: 200px;">
+                        <div class="card-header text-center bg-success">
+                            <h2 class="text-white my-auto">Design/social media team</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                We are actively looking for people with creative vision and a drive to implement them successfully. If you are up for it, then this form is for you.
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="w-btn w-100 mt-4">Go to form</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card mb-3 shadow">
+                <img src="{% static 'svg/work_together.svg' %}" alt="" class="card-img-top" style="max-height: 200px;">
+                <div class="card-header text-center bg-success">
+                    <h2 class="text-white my-auto">Tech team</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        We have a dedicated tech team that is working constantly to ensure we stay ahead in the game at all times. A beginner or a master of the craft, we are looking for all the help we can get. If you are a beginner with a basic understanding of the tech world, then you will be mentored.
+                    </p>
+                    <a href="#" class="w-btn w-100">Go to form</a>
+                </div>
+            </div>
+
+        <div class="col-md-1"></div> 
+    </div>
+</div>
+</section>
+
+{% endblock content %}
