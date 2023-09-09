@@ -14,6 +14,8 @@
   color: green;   
 }
 
+
+
 .card-header{
   background-color: #198754 !important;
   color: white !important;
@@ -225,7 +227,7 @@ h6 {
   left: 0;
   right: 0;
   z-index: 10;
-  background: linear-gradient(to right    , black 10%, #14A44D 100%);
+  background: linear-gradient(to right    ,#054f23 10%, #e69a2f 100%);
 
 }
 

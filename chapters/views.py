@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .forms import NewChapterForm, JoinChapterForm
+from .forms import NewChapterForm, JoinChapterForm, JoinForm
 from django.contrib import messages
 from .models import AllChapter, NewChapterApplication, JoinChapterApplication, Event
 from django.core.exceptions import ObjectDoesNotExist
@@ -110,3 +110,33 @@ def chapterdetails(request, chapter_id):
     }
 
     return render(request, 'chapters/chapterdetails.html', context)
+
+
+
+def joinus(request):
+    context = {
+        "pname":"joinUs",
+    }
+
+    if not request.user.is_authenticated:
+        messages.error(request, "Please log into your account before applying to join.")
+        return redirect('signin')
+
+    form = JoinForm(instance=request.user)
+    form.name = "Join Us Form"
+    context['form'] = form
+
+    if request.method == "POST":
+        form = JoinForm(request.POST or None)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.user = request.user
+            obj.save()
+            
+            messages.success(
+                request, "You have successfully applied to join a chapter. We will contact you for further updates.")
+            return redirect('profile')
+
+    context['form'] = form
+    return render(request, 'chapters/joinus.html', context)
+
