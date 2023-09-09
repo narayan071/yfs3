@@ -14,3 +14,10 @@ class Feedback(models.Model):
 
     def __str__(self):
         return str(self.email)
+
+class num_counts(models.Model):
+    trees = models.IntegerField(default = 0)
+    beaches = models.IntegerField(default = 0)
+    projects = models.IntegerField(default = 0)
+    plastic = models.IntegerField(default = 0)
+

@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from .models import num_counts
 from .forms import FeedbackForm
 from django.contrib import messages
 from .forms import FeedbackForm
@@ -6,8 +7,11 @@ from .forms import FeedbackForm
 # Create your views here.
 
 def home(request):
-    context={
-        'pname':"home",
+    count_instance = num_counts.objects.first() 
+
+    context = {
+        'pname': "home",
+        'count_instance': count_instance,
     }
     return render(request, 'home/home.html', context)
 # def contact(request):
