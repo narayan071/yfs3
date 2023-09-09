@@ -31,6 +31,7 @@ def calculate_carbon_footprint(request):
             tt = q_ship * 0.037 if ship else 0
 
             total_carbon_footprint = pp + oo + ii + uu + yy + tt
+            total_carbon_footprint = round(total_carbon_footprint,2)
 
             context = {
                 "carbon_footprint": total_carbon_footprint,
