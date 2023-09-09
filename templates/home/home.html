@@ -193,7 +193,7 @@
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container">
-
+{% comment %} 
         <div class="section-title mb-3" data-aos="zoom-in">
           <h2 class="title mb-3">WHAT WE DO</h2>
           <h3>We are creating sustainable society, for <span>everyone</span> and <span>forever</span>.</h3>
@@ -222,7 +222,47 @@
               <h4><a href="https://www.instagram.com/p/CWkCcSAKyCx/"><span class="text-white">Global Youth Summits</span></a></h4>
               <p style="color: white;">With our huge volunteer base, we make sure to educate and create awareness about pressing environmental issues by conductiong international seminars and youth summits.</p>
             </div>
-          </div>
+          </div> {% endcomment %}
+        
+
+          <div class="row">
+            {% for item in what_we_do %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal{{ item.id }}">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="modal{{ item.id }}Label" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal{{ item.id }}Label">{{ item.name }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                {{ item.details }}
+                                <br>
+                                <a href="{{ item.url }}" target="_blank">Learn more on our website</a>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
       </div>
     </section><!-- End Services Section -->
 
