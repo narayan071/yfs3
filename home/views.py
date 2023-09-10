@@ -8,7 +8,7 @@ from .forms import FeedbackForm
 
 def home(request):
     count_instance = num_counts.objects.first() 
-    what_we_do_inst = what_we_do.objects.all()
+    what_we_do_inst = what_we_do.objects.all()[:3]
 
 
     context = {

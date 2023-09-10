@@ -31,8 +31,7 @@
     <!-- First Carousel for Live Events -->
     <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            {% for event in events %}
-            {% if event.event_type == 'Live events' %}
+            {% for event in live_events %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
                 <div class="d-flex justify-content-center align-items-center p-5">
                     <div class="card text-center shadow-lg" style="width: 30rem;">
@@ -40,14 +39,11 @@
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">{{ event.name }}</h5>
                             <p class="card-text">{{ event.description }}</p>
-                            {% if event.event_type == 'Live events' %}
                             <a href="{{ event.event_url }}" class="w-btn">Register Here</a>
-                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
-            {% endif %}
             {% endfor %}
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
@@ -69,8 +65,7 @@
     <p class="fs-5 mb-2"><h4>Explore our corporate workshops</h4></p>
     <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            {% for event in events %}
-            {% if event.event_type == 'Corporate workshops' %}
+            {% for event in corporate_workshops %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
                 <div class="d-flex justify-content-center align-items-center p-5">
                     <div class="card text-center shadow-lg" style="width: 30rem;">
@@ -78,14 +73,11 @@
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">{{ event.name }}</h5>
                             <p class="card-text">{{ event.description }}</p>
-                            {% if event.event_type == 'Corporate workshops' %}
-                            <a href="{{ event.event_url }}" class="btn">Register Here</a>
-                            {% endif %}
+                            <a href="{{ event.event_url }}" class="w-btn">Register Here</a>
                         </div>
                     </div>
                 </div>
             </div>
-            {% endif %}
             {% endfor %}
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
@@ -106,8 +98,7 @@
     <p class="fs-5 mb-2"><h4>Explore our past events</h4></p>
     <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            {% for event in events %}
-            {% if event.event_type == 'Past events' %}
+            {% for event in past_events %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
                 <div class="d-flex justify-content-center align-items-center p-5">
                     <div class="card text-center shadow-lg" style="width: 30rem;">
@@ -119,7 +110,6 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
             {% endfor %}
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">

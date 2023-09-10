@@ -74,6 +74,7 @@
         </div>
         <div>
             {% for chapter in allchapters %}
+            {% if chapter.selected == T %}
             <a href="{% url 'chapterdetails' chapter_id=chapter.id %}" style="text-decoration: none; color: inherit;">
             <div class="card m-3" >
                 <div class="card-header">
@@ -89,7 +90,8 @@
                 </div>
             </div>
         </a>
-            {% endfor %}
+        {% endif %}
+        {% endfor %}
         </div>
     </div>
 </section>
