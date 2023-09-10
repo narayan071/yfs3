@@ -6,6 +6,7 @@ def events(request):
     events = Events.objects.all()
     context = {
         'events' : events,
+        'pname' : 'session',
     }
     return render(request, 'events/events.html', context)
 
