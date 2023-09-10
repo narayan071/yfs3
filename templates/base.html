@@ -19,6 +19,7 @@
         {% block links %}{% endblock links %}
 </head>
 <body class="body">
+  <div class="navbar-container">
   <nav id="myNav" class="navbar navbar-expand-lg py-0 mb-5" style="background-color: black">
         <div class="container-fluid">
           <div class="p-1"><img src="{% static 'images/main-logo.png' %}" alt="logo"></div>
@@ -29,6 +30,39 @@
           
           <div class="collapse navbar-collapse" style = "height:100%" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h-100 text-white">
+              
+              {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+                  Welcome, {{user.first_name}}
+                </a>
+                <ul class="dropdown-menu">
+                  {% comment %} <li><a class="dropdown-item " href="{% url 'profile' %}">Profile</a></li> {% endcomment %}
+                  <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                  <li><a class="dropdown-item" href="{% url 'signout' %}">Log out</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li class="nav-item my-0">
+              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signin' %}">LOGIN</a>
+              </li>
+              <li class="nav-item my-0">
+              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signup' %}">SIGNUP</a>
+              </li>
+              {% endif %}
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position:fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
               <li class="nav-item dropdown" style="height: 100%;">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="{% url 'home' %}" id="dropdown-link">Home</a>
                 <ul class="dropdown-menu">
@@ -61,30 +95,11 @@
                 <li class="nav-item my-0">
                 <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'contact' %}">Contact us</a>
               </li>
-              {% if user.is_authenticated %}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
-                  Welcome, {{user.first_name}}
-                </a>
-                <ul class="dropdown-menu">
-                  {% comment %} <li><a class="dropdown-item " href="{% url 'profile' %}">Profile</a></li> {% endcomment %}
-                  <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                  <li><a class="dropdown-item" href="{% url 'signout' %}">Log out</a></li>
-                </ul>
-              </li>
-              {% else %}
-              <li class="nav-item my-0">
-              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signin' %}">LOGIN</a>
-              </li>
-              <li class="nav-item my-0">
-              <a class="nav-link mx-1" style="padding-top:auto; padding-bottom:auto;" href="{% url 'signup' %}">SIGNUP</a>
-              </li>
-              {% endif %}
-
             </ul>
           </div>
         </div>
       </nav>
+    </div>
     
     {% block content %}
     
