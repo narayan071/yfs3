@@ -9,7 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 def chapters(request):
-    allchapters = AllChapter.objects.all().order_by('established_on')
+    allchapters = AllChapter.objects.all()
 
     context = {
         "pname":"chapters",

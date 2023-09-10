@@ -1,6 +1,6 @@
 from . import models
 from django import forms
-from .models import NewChapterApplication, JoinChapterApplication, Event, JoinApplication
+from .models import NewChapterApplication, JoinChapterApplication, Event, JoinApplication, AllChapter
 
 class NewChapterForm(forms.ModelForm):
     class Meta:
@@ -98,3 +98,10 @@ class JoinForm(forms.ModelForm):
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
             # visible.field.widget.attrs['placeholder'] = visible.field.help_text
+
+
+
+class AllChapterForm(forms.ModelForm):
+    class Meta:
+        model = AllChapter
+        fields = '__all__' 

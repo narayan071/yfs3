@@ -17,6 +17,7 @@ class NewChapterApplication(models.Model):
         ('Assam', 'Assam'),
         ('Bihar', 'Bihar'),
         ('Chhattisgarh', 'Chhattisgarh'),
+        ('Delhi', 'Delhi'),
         ('Goa', 'Goa'),
         ('Gujarat', 'Gujarat'),
         ('Haryana', 'Haryana'),
@@ -84,6 +85,8 @@ class AllChapter(models.Model):
     total_members = models.IntegerField(null=False, default=0)
     chapter_lead = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
     established_on = models.DateField(("Chapter Estd. On"),auto_now_add=True)
+    selected = models.BooleanField(default=False)
+    logo = models.ImageField( upload_to="ch_logo", default="")
     def __str__(self):
         return self.institution_name
 
@@ -95,6 +98,7 @@ class JoinChapterApplication(models.Model):
         ('Assam', 'Assam'),
         ('Bihar', 'Bihar'),
         ('Chhattisgarh', 'Chhattisgarh'),
+        ('Delhi', 'Delhi'),
         ('Goa', 'Goa'),
         ('Gujarat', 'Gujarat'),
         ('Haryana', 'Haryana'),

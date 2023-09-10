@@ -59,9 +59,7 @@
                         {% endfor %}
                     {% else %}
                         <h5>No Chapter Joined Yet !!!</h5>
-                        <a class="w-btn" href="{% url 'join-chapter' %}">Join Chapter</a>
-                        <span>or</span>
-                        <a class="w-btn"href="{% url 'new-chapter' %}">Create Chapter</a>
+                        <a class="w-btn" href="{% url 'chapters' %}">Join Us</a>
                     {% endif %}
                 </div>
             </div>
@@ -96,7 +94,17 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    <strong>Error:</strong> Please correct the errors below.
+                </div>
+            {% endif %}
+            
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" name="update_chapter" class="btn btn-success">Update Chapter</button>
+            </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

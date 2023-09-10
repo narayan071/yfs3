@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from chapters.models import NewChapterApplication, JoinChapterApplication
-from chapters.forms import  EventForm
+from chapters.forms import  EventForm, AllChapterForm
 
 # Create your views here.
 
@@ -67,16 +67,32 @@ def signout(request):
     }
     return render(request, 'user/signin.html',context)
 
+
 def profile(request):
     chapters = NewChapterApplication.objects.filter(user=request.user)
-    members = JoinChapterApplication.objects.filter(user = request.user)
-    add_event = EventForm()
-    add_event.chapter = chapters[0]
-    context={
-        "pname": "profile",
-        "chapters" : chapters,
-        "members" : members,
-        "add_event" : add_event
-    }
-    return render(request,'user/profile.html',context)
+    members = JoinChapterApplication.objects.filter(user=request.user)
+    
+    if request.method == "POST" and len(chapters) > 0:
+        # Check if the form is for updating the chapter
+        if 'update_chapter' in request.POST:
+            form = AllChapterForm(request.POST, instance=chapters[0])
+            if form.is_valid():
+                form.save()
+        else:
+            add_event = EventForm()
+            add_event.chapter = chapters[0]
 
+    else:
+        form = AllChapterForm(instance=chapters[0])
+        add_event = EventForm()
+        add_event.chapter = chapters[0]
+
+    context = {
+        "pname": "profile",
+        "chapters": chapters,
+        "members": members,
+        "add_event": add_event,
+        "form": form,  # Pass the form to the template
+    }
+
+    return render(request, 'user/profile.html', context)
