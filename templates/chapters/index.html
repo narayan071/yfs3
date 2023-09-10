@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block content %}
 
 
@@ -76,7 +78,7 @@
             {% for chapter in allchapters %}
             {% if chapter.selected == True %}
             <a href="{% url 'chapterdetails' chapter_id=chapter.id %}" style="text-decoration: none; color: inherit;">
-            <div class="card m-3" >
+            <div class="card m-3 shadow" >
                 <div class="card-header">
                     <h5 class="card-title my-auto">{{ chapter.institution_name }}</h5>
                 </div>
