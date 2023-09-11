@@ -932,7 +932,7 @@ footer #links ul {
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 1px;
   -webkit-transition: 0.2s;
-  transition: 0.2s;
+  transition: 0.2s; 
 }
 
 #links a:hover {
