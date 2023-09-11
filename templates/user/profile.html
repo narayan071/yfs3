@@ -3,19 +3,7 @@
 {% block content %}
 <div class="container" style="margin-top: 100px">
     <div class="row">
-        <div class="col-md-3">
-            <div class="card m-1">
-                <div class="card-header">
-                    <div class="border border-1 rounded-5 text-center">
-                        <h2 class="my-auto">Header</h2>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h3 class="my-auto">Body</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="card m-1">
                 <div class="card-header d-flex justify-content-between">
                     <h3 class="my-auto d-inline-block">Bio-Data</h3>
@@ -42,13 +30,11 @@
                     <h3 class="my-auto">Chapter</h3>
                 </div>
                 <div class="card-body">
-                    {% if chapters %}
+                    {% if chapters and chapter.user == user %}
                         {% comment %}  {% endcomment %}
-                        {% for chapter in chapters %}
-                        <p class="fw-bold">Institution : {{ chapter.institution_name }} </p>
-                        <p class="fw-bold">Location : {{ chapter.city }}, {{chapter.state}} </p>
-                        <p class="fw-bold">Chapter since : {{ chapter.applied_at }} </p>
-                        {% endfor %}
+                        <p class="fw-bold">Institution : {{ chapters.institution_name }} </p>
+                        <p class="fw-bold">Location : {{ chapters.city }}, {{chapter.state}} </p>
+                        <p class="fw-bold">Chapter since : {{ chapters.applied_at }} </p>
                         <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#edit_chapter">Edit Chapter</button>
                         <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#add_event">Add Event</button>
                     {% elif members%}

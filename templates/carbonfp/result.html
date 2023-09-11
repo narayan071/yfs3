@@ -2,7 +2,7 @@
 {% load static %}
 {% block head %}
 <style>
-    .container {
+    section {
         background-image: url('{% static 'images/bg/bg1.jpg' %}');
         background-size: cover;
         background-repeat: no-repeat;
@@ -15,7 +15,7 @@
 </style>
 {% endblock head %}
 {% block content %}
-<div class="container">
+<section>
     <div class="card" style="margin:100px 100px 10px" data-aos="flip-up"> 
         <div class="card-header">
             <h1 class="my-auto">Carbon Footprint Calculator Result</h1>
@@ -32,5 +32,5 @@
     </div>
 <center>    <a href="{% url 'calculate_carbon_footprint' %}" class="w-btn btn-primary">Calculate Again</a>
 </center>
-</div>
+</section>
 {% endblock content %}

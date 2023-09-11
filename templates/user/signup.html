@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+<style>
+    section{
+        
+            background-image: url('{% static 'images/bg/bg2.jpg' %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh; /* Set a minimum height to cover the entire viewport */
+            align-items: center;
+        
+    }
+</style>
+{% endblock head %}
 
 {% block content %}
 {% load socialaccount %}
-<div class="container py-5 mt-5">
+<section>
     <div class="row">
         <div class="col-md-6 mx-auto">
-            <div class="card shadow "   data-aos="zoom-in">
+            <div class="card shadow " style="margin:100px;"   data-aos="zoom-in">
                 <div class="card-header bg-success text-white text-center">
                     <h3 class="my-auto fw-bolder">Sign Up</h3>
                 </div>
@@ -49,5 +63,5 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock content %}

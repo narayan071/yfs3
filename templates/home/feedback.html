@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+<style>
+    section{
+        
+            background-image: url('{% static 'images/bg/bg1.jpg' %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh; /* Set a minimum height to cover the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+    }
+</style>
+{% endblock head %}
+
 {% block meta_tags %}
 <meta property="og:title" content="Contact us at Youth for Sustainability">
 <meta property="og:url" content="https://youthforsustainability.in/">

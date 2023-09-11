@@ -2,7 +2,7 @@
 {% load static %}
 {% block head %}
 <style>
-    .container {
+    section {
         background-image: url('{% static 'images/bg/bg1.jpg' %}');
         background-size: cover;
         background-repeat: no-repeat;
@@ -15,8 +15,8 @@
 </style>
 {% endblock head %}
 {% block content %}
-<div class="container">
-    <div class="card " style="margin:100px 200px 100px">
+<section>
+    <div class="card shadow-lg" data-aos="fade-up" style="margin:100px 200px 100px">
         <div class="card-header ">
             <h2 class="fw-bolder my-auto text-center">Carbon Footprint Calculator</h2>
         </div>
@@ -30,5 +30,5 @@
     </form>
         </div>
     </div>
-</div>
+</section>
 {% endblock content %}

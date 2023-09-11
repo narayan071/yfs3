@@ -105,3 +105,9 @@ class AllChapterForm(forms.ModelForm):
     class Meta:
         model = AllChapter
         fields = '__all__' 
+
+
+class AllChapterEditForm(forms.ModelForm):
+    class Meta:
+        model = AllChapter
+        fields = ['institution_name', 'total_members', 'chapter_lead', 'selected', 'logo']

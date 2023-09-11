@@ -71,28 +71,24 @@ def signout(request):
 def profile(request):
     chapters = NewChapterApplication.objects.filter(user=request.user)
     members = JoinChapterApplication.objects.filter(user=request.user)
-    
-    if request.method == "POST" and len(chapters) > 0:
-        # Check if the form is for updating the chapter
-        if 'update_chapter' in request.POST:
-            form = AllChapterForm(request.POST, instance=chapters[0])
-            if form.is_valid():
-                form.save()
-        else:
-            add_event = EventForm()
-            add_event.chapter = chapters[0]
-
-    else:
-        form = AllChapterForm(instance=chapters[0])
-        add_event = EventForm()
-        add_event.chapter = chapters[0]
-
-    context = {
+    if len(chapters) > 0:
+        chapters = NewChapterApplication.objects.filter(user=request.user)[0]
+    if(len(members)!=0 and chapters):
+        context = {
         "pname": "profile",
         "chapters": chapters,
         "members": members,
-        "add_event": add_event,
-        "form": form,  # Pass the form to the template
     }
+    elif (len(members)!=0 and chapters):
+        context = {
+            "pname": "profile",
+            "members": members,
+        }
+    else :
+        context = {
+            "pname": "profile",
+            "chapters": chapters,
+        }
+        
 
     return render(request, 'user/profile.html', context)

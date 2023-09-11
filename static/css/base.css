@@ -755,6 +755,9 @@ h6 {
   content: "/";
 }
 
+footer{
+  width: 100%;
+}
 footer #logo {
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
@@ -831,6 +834,7 @@ footer #links div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width:100%;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -843,6 +847,39 @@ footer #links div {
           justify-content: space-between;
   height: 100%;
 }
+
+footer #links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+footer #links div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1; /* Distribute equal space among the divs */
+}
+
+footer #links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer #links a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+footer #links a:hover {
+  color: white;
+}
+
 
 footer #links p {
   font-size: 1.25em;
@@ -871,6 +908,38 @@ footer #links ul {
   padding: 0;
 }
 
+#links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#links div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#links a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#links a:hover {
+  color: white;
+}
+
+
 footer #links a {
   font-size: 0.8em;
   text-decoration: none;
@@ -884,61 +953,7 @@ footer #links a:hover {
   color: white;
 }
 
-footer #subscription {
-  grid-row: 2 / span 2;
-  -ms-grid-row-span: 2;
-  grid-column: 2 / span 2;
-  grid-area: subscription;
-  width: 100%;
-}
 
-footer #subscription p {
-  font-size: 2em;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  width: 100%;
-}
-
-footer #subscription form {
-  margin-top: 1rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
-  gap: 0.5rem;
-}
-
-footer #subscription form #email {
-  height: 3.25rem;
-  background: none;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 3px;
-  padding: 0.25em 0.5em;
-  color: white;
-  font-size: 1em;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-}
-
-footer #subscription form #email:focus {
-  border: 1px solid white;
-}
-
-footer #subscription form #subscribe {
-  font-size: 1.2em;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 3px;
-  cursor: pointer;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-}
-
-footer #subscription form #subscribe:hover {
-  -webkit-box-shadow: 0 0 0.25em 0.15em rgba(255, 255, 255, 0.6);
-          box-shadow: 0 0 0.25em 0.15em rgba(255, 255, 255, 0.6);
-}
 
 footer #copyright {
   grid-row: 2 / span 2;
