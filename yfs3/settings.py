@@ -65,6 +65,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -107,8 +109,8 @@ DATABASES = {
         'NAME': 'YFS',
         'USER': 'root',
         'PASSWORD': 'pass1111',
-        'HOST': 'localhost',  # If your database is on a different host, specify it here
-        'PORT': '3306',           # Leave empty to use the default MySQL port (3306)
+        'HOST': 'localhost',  
+        'PORT': '3306',           
     }
 }
 
