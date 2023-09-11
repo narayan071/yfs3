@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-SITE_ID = 3 
+SITE_ID = 4
+# SITE_ID = 3
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'home',
     'accounts',
     'blog',
