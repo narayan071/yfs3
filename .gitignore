@@ -1,13 +1,13 @@
 
-__pycache__/
-*.pyc
-*.pyo
-__init__.py
-db.sqlite3
-.DS_Store
+# __pycache__/
+# *.pyc
+# *.pyo
+# __init__.py
+# db.sqlite3
+# .DS_Store
 
-# Configuration files
-settings/local.py  
+# # Configuration files
+# settings/local.py  
 
 # Secret keys
 client_secret_
@@ -15,4 +15,3 @@ client_secret_
 myenv/
 
 
-client_secret_734371828286-aemnh9n7o9ti7uotf1g8i3s79m5gcb6l.apps.googleusercontent.com.json
