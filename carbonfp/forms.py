@@ -59,7 +59,7 @@ class CarbonFootprintForm(forms.ModelForm):
     )
     q_plane = forms.IntegerField(
         required=0,
-        help_text="Enter the number of kilometers in bus."
+        help_text="Enter the number of kilometers in plane."
     )
     ship = forms.BooleanField(
         required=False,

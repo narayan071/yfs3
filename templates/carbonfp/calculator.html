@@ -7,7 +7,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        min-height: 100vh; /* Set a minimum height to cover the entire viewport */
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -16,18 +16,110 @@
 {% endblock head %}
 {% block content %}
 <section>
-    <div class="card shadow-lg" data-aos="fade-up" style="margin:100px 200px 100px">
-        <div class="card-header ">
+    <div class="card shadow-lg" data-aos="fade-up" style="margin: 100px 200px 100px">
+        <div class="card-header">
             <h2 class="fw-bolder my-auto text-center">Carbon Footprint Calculator</h2>
         </div>
         <div class="card-body mx-5">
             <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="w-btn w-100 mt-4">Calculate</button>
-            <div>
-        </div>
-    </form>
+                {% csrf_token %}
+                
+                <!-- Motorcycle -->
+                <div class="motorcycle border shadow p-3 m-2 rounded-2" data-aos="fade-left">  
+                <div class="mb-3">
+                    <label for="{{ form.motorcycle.id_for_label }}"><i class="fa-2xl fa-solid fa-motorcycle" style="color: #000000;"></i> Do you own a motorcycle?</label>
+                    {{ form.motorcycle }}
+                    <small class="form-text text-muted">{{ form.motorcycle.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.q_motorcycle.id_for_label }}">Motorcycle Distance (if yes)</label>
+                    {{ form.q_motorcycle }}
+                    <small class="form-text text-muted">{{ form.q_motorcycle.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.persons_motorcycle.id_for_label }}">Number of persons on the motorcycle (if yes)</label>
+                    {{ form.persons_motorcycle }}
+                    <small class="form-text text-muted">{{ form.persons_motorcycle.help_text }}</small>
+                </div>
+            </div>
+                
+                <!-- Car -->
+                <div class="car border shadow p-3 m-2 rounded-2" data-aos="fade-right">  
+                <div class="mb-3">
+                    <label for="{{ form.car.id_for_label }}"><i class="fa-2xl fa-solid fa-car-side" style="color: #000000;"></i> Do you own a car?</label>
+                    {{ form.car }}
+                    <small class="form-text text-muted">{{ form.car.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.q_car.id_for_label }}">Car Distance (if yes)</label>
+                    {{ form.q_car }}
+                    <small class="form-text text-muted">{{ form.q_car.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.persons_car.id_for_label }}">Number of persons on the car (if yes)</label>
+                    {{ form.persons_car }}
+                    <small class="form-text text-muted">{{ form.persons_car.help_text }}</small>
+                </div>
+            </div>
+                
+                <!-- Bus -->
+                <div class="bus border shadow p-3 m-2 rounded-2" data-aos="fade-left">
+                <div class="mb-3">
+                    <label for="{{ form.bus.id_for_label }}"><i class="fa-2xl fa-solid fa-bus" style="color: #000000;"></i> Do you use a bus?</label>
+                    {{ form.bus }}
+                    <small class="form-text text-muted">{{ form.bus.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.q_bus.id_for_label }}">Bus Distance (if yes)</label>
+                    {{ form.q_bus }}
+                    <small class="form-text text-muted">{{ form.q_bus.help_text }}</small>
+                </div>
+                </div>
+                
+                <!-- Train -->
+                <div class="train border shadow p-3 m-2 rounded-2" data-aos="fade-right">
+                <div class="mb-3">
+                    <label for="{{ form.train.id_for_label }}"><i class="fa-2xl fa-solid fa-train-subway" style="color: #000000;"></i> Do you use a train?</label>
+                    {{ form.train }}
+                    <small class="form-text text-muted">{{ form.train.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.q_train.id_for_label }}">Train Distance (if yes)</label>
+                    {{ form.q_train }}
+                    <small class="form-text text-muted">{{ form.q_train.help_text }}</small>
+                </div>
+                </div>
+                
+                <!-- Plane -->
+                <div class="plane border shadow p-3 m-2 rounded-2" data-aos="fade-left">
+                <div class="mb-3">
+                    <label for="{{ form.plane.id_for_label }}"><i class="fa-2xl fa-solid fa-plane-departure" style="color: #000000;"></i> Do you use a plane?</label>
+                    {{ form.plane }}
+                    <small class="form-text text-muted">{{ form.plane.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.q_plane.id_for_label }}">Plane Distance (if yes)</label>
+                    {{ form.q_plane }}
+                    <small class="form-text text-muted">{{ form.q_plane.help_text }}</small>
+                </div>
+                </div>
+                
+                <!-- Ship -->
+                <div class="ship border shadow p-3 m-2 rounded-2" data-aos="fade-right">
+                <div class="mb-3">
+                    <label for="{{ form.ship.id_for_label }}"><i class="fa-2xl fa-solid fa-ship" style="color: #000000;"></i> Do you use a ship?</label>
+                    {{ form.ship }}
+                    <small class="form-text text-muted">{{ form.ship.help_text }}</small>
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.q_ship.id_for_label }}">Ship Distance (if yes)</label>
+                    {{ form.q_ship }}
+                    <small class="form-text text-muted">{{ form.q_ship.help_text }}</small>
+                </div>
+                </div>
+                
+                <button type="submit" class="w-btn w-100 mt-4">Calculate</button>
+            </form>
         </div>
     </div>
 </section>
