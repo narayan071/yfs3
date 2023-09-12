@@ -25,9 +25,9 @@
                     <h3 class="my-auto fw-bolder">Log In</h3>
                 </div>
                 <div class="card-body">
-                    {% for message in messages %}
+                    {% comment %} {% for message in messages %}
                         <p class={{message.tags}}>{{message}}</p>
-                    {% endfor %}
+                    {% endfor %} {% endcomment %}
                     <form action="{% url 'signin' %}" method="POST">
                         {% csrf_token %}
 
