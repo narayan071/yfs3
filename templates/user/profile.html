@@ -2,12 +2,16 @@
 
 {% block content %}
 <div class="container" style="margin-top: 100px">
+  {% if messages %}
+  {% for message in messages %}
+      <p class="alert alert-{{message.tags}} text-center mt-2">{{message}}</p>
+  {% endfor %}
+  {% endif %}
     <div class="row">
         <div class="col-md-12">
             <div class="card m-3 shadow">
                 <div class="card-header d-flex justify-content-between">
                     <h3 class="my-auto d-inline-block">Bio-Data</h3>
-                    <a href="" class="my-auto" data-bs-toggle="modal" data-bs-target="#edit_profile"><i class="fa-solid fa-user-pen" style="color: #ffffff;"></i></a>
 
                 </div>
                 <div class="card-body">
@@ -32,7 +36,6 @@
                 <div class="card-body">
                     {% if chapters %}
                         {% comment %}  {% endcomment %}
-                        lead
                         <p class="fw-bold">Institution : {{ chapters.institution_name }} </p>
                         <p class="fw-bold">Location : {{ chapters.city }}, {{chapter.state}} </p>
                         <p class="fw-bold">Chapter since : {{ chapters.applied_at }} </p>
@@ -40,7 +43,6 @@
                         <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#add_event">Add Event</button>
                     {% elif members%}
                         {% for member in members  %}
-                            member
                             <p class="fw-bold">Institution : {{ member.institution_name }} </p>
                             <p class="fw-bold">Location : {{ member.city }}, {{member.state}} </p>
                             <p class="fw-bold">Chapter since : {{ member.applied_at }} </p>
@@ -56,7 +58,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="edit_profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{% comment %} <div class="modal fade" id="edit_profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content " style="rounded-top">
         <div class="modal-header card-header" >
@@ -75,7 +77,7 @@
         </div>
       </div>
     </div>
-</div>
+</div> {% endcomment %}
 <div class="modal fade" id="edit_chapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

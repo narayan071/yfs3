@@ -51,11 +51,11 @@
                     <br />
                     There are many ways to join us and support our mission. Contact us to find out more about volunteer opportunities, fundraising events, and ways that you can get our message to your friends and family. You can host us for a summit at your place where we equip you with the necessary toolkit for Sustainable Development.
                 <form action="" method="POST">
-                    {% comment %} {% if messages %}
+                    {% if messages %}
                     {% for message in messages %}
                         <p class="alert alert-{{message.tags}} text-center mt-2">{{message}}</p>
                     {% endfor %}
-                    {% endif %} {% endcomment %}
+                    {% endif %}
                     {% csrf_token %}
                     {% if form.errors %}
                     <div class="error">

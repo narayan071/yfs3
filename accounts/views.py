@@ -17,8 +17,9 @@ def signin(request):
             messages.error(request, 'Invalid signin credentials')
             return render(request, 'user/signin.html')
         else:
+            messages.success(request, f"Signed in as {user}")
             login(request, user)
-            return redirect('home')
+            return redirect('profile')
     context={
         "pname": "signin",
     }
@@ -52,7 +53,6 @@ def signup(request):
         user.save()
         messages.success(request, "Account Created successfuly, signin to Continue")
     
-        print(first_name, last_name,email, username, password)  #to be removed
     context={
         "pname":"signup",
     }

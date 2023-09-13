@@ -181,5 +181,5 @@ AUTHENTICATION_BACKEND = (
     "allauth.account.auth_backends.AuthenticationBackend"
 )
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/user/profile/"
 LOGOUT_REDIRECT_URL = "/"
