@@ -99,7 +99,7 @@ def chapterdetails(request, chapter_id):
     core_team_members = JoinChapterApplication.objects.filter(institution_name=chapter.institution_name, is_core=True)
     volunteers = JoinChapterApplication.objects.filter(institution_name=chapter.institution_name, is_volunteer=True)
 
-    events = Event.objects.filter(chapter=chapter)
+    events = reversed(Event.objects.filter(chapter=chapter).order_by('date'))
 
     context = {
         "pname": "Chapter Details",

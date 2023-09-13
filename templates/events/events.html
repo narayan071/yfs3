@@ -11,7 +11,7 @@
     <div class="col-md-6  p-5 bg-white rounded-3 hero-section" data-aos="fade-up">
       <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
       <h3 style="margin: 40px 0px;" class="title"> OUR EVENTS</h3>
-      <h1 class="fs-2 fw-bold mb-2">We conduct events all across Odisha !</h1>
+      <h1 class="fs-2 fw-bold mb-2">We conduct events all across India!</h1>
       <p class="fs-6 mb-4" style="line-height: 2.25rem">
         There are several events that happen all year long. See for yourself and join us in the upcoming events. Make sure you register yourself if you don't want to miss out on updates.
       </p>
@@ -29,6 +29,7 @@
     <h3 style="margin: 40px 0px;" class="title"> LIVE EVENTS</h3>
     <p class="fs-5 mb-2"><h4>Explore live events</h4></p>
     <!-- First Carousel for Live Events -->
+    {% if live_events %}
     <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             {% for event in live_events %}
@@ -55,6 +56,9 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    {% else %}
+        <h3 class="text-center">No live events availabe for now</h3>
+    {% endif %}
 </section>
 </div>
 
@@ -63,6 +67,7 @@
     <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
     <h3 style="margin: 40px 0px;" class="title"> CORPORATE WORKSHOPS</h3>
     <p class="fs-5 mb-2"><h4>Explore our corporate workshops</h4></p>
+    {% if corporate_workshops %}
     <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             {% for event in corporate_workshops %}
@@ -89,6 +94,9 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    {% else %}
+        <h3 class="text-center">No corporate workshops availabe for now</h3>
+    {% endif %}
 </section>
 
 <!-- Third Carousel for Past Events -->
@@ -96,6 +104,7 @@
     <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
     <h3 style="margin: 40px 0px;" class="title"> PAST EVENTS</h3>
     <p class="fs-5 mb-2"><h4>Explore our past events</h4></p>
+    {% if past_events %}
     <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             {% for event in past_events %}
@@ -121,6 +130,9 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    {% else %}
+        <h3 class="text-center">No live events availabe for now</h3>
+    {% endif %}
 </section>
 </div>
 

@@ -4,9 +4,12 @@
 {% block content %}
 <div class="container" style="margin-top:100px">
     <div class="container my-5">
-        <div class="card" style="background-color: #008000;">
+        <div class="card shadow" style="background-color: #008000;">
           <div class="card-body">
-            <h2 class="card-title text-white text-center mb-3">Chapter Details</h2>
+            <h2 class="card-title text-white text-center m-0">Chapter Details</h2>
+            <div style="text-align:center">
+              <img src="{{ chapter.logo.url }}" style="border-radius:50%; width: 45px; height: 45px;" class=" m-3 py-auto text-center mx-auto img-fluid" alt="chapterlogo">
+            </div>            
             <h3 class="card-subtitle text-center text-white"><strong>{{ chapter.institution_name }}</strong></h3>
             <p class="card-text text-center">Established on: {{ chapter.established_on }}</p>
           </div>
@@ -34,15 +37,16 @@
       </tr>
     </thead>
     <tbody>
+      <tr class="text-center">
+        <td>{{ chapter.chapter_lead.first_name }} {{ chapter.chapter_lead.last_name }}</td>
+        <td>{{ chapter.chapter_lead.email }}</td>
+        <td>{{ chapter.chapter_lead.phone_number }}</td>
+      </tr>
       {% for member in core_team_members %}
         <tr class="text-center">
           <td>{{ member.first_name }} {{ member.last_name }}</td>
           <td>{{ member.email }}</td>
           <td>{{ member.phone_number }}</td>
-        </tr>
-      {% empty %}
-        <tr class="text-center">
-          <td colspan="2">No core team members</td>
         </tr>
       {% endfor %}
     </tbody>
@@ -80,7 +84,7 @@
           <ul class="list-group list-group-flush p-3">
             {% for event in events %}
               <li class="list-group-item ">
-                <div class="row">
+                <div class="row shadow m-2 p-3">
                     <div class="col-md-6">
                         <strong>{{ event.name }}</strong><br>
                         Date: {{ event.date }}<br><br>

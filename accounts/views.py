@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from chapters.models import NewChapterApplication, JoinChapterApplication
+from chapters.models import NewChapterApplication, JoinChapterApplication, AllChapter
 from chapters.forms import  EventForm, AllChapterForm
 
 # Create your views here.
@@ -34,11 +34,9 @@ def signup(request):
 
         user_exists=False
         if User.objects.filter(username=username).exists():
-            # print("username is already taken")
             messages.error(request,'username is already taken, try with a new username')
             user_exists=True
         if User.objects.filter(email=email).exists():
-            # print("email is already existing")
             messages.error(request,'email is already taken, try with a new email id')
             user_exists=True
         if user_exists:
@@ -69,17 +67,27 @@ def signout(request):
 
 
 def profile(request):
-    chapters = NewChapterApplication.objects.filter(user=request.user)
+    chapters = AllChapter.objects.filter(chapter_lead=request.user)
     members = JoinChapterApplication.objects.filter(user=request.user)
+    print(members)
+    add_event = EventForm()
+
+    if request.method == "POST":
+        form = EventForm(request.POST, request.FILES)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.chapter = chapters[0]
+            obj.save()
     if len(chapters) > 0:
         chapters = NewChapterApplication.objects.filter(user=request.user)[0]
-    if(len(members)!=0 and chapters):
+    if(chapters):
         context = {
         "pname": "profile",
         "chapters": chapters,
         "members": members,
+        "add_event_form":add_event,
     }
-    elif (len(members)!=0 and chapters):
+    elif (len(members)!=0 and len(chapters)==0):
         context = {
             "pname": "profile",
             "members": members,
@@ -89,6 +97,5 @@ def profile(request):
             "pname": "profile",
             "chapters": chapters,
         }
-        
-
+    
     return render(request, 'user/profile.html', context)

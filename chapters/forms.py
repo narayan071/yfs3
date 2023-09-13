@@ -69,7 +69,7 @@ class EventForm(forms.ModelForm):
         for visible in self.visible_fields():
             if visible.name != 'date':
                 visible.field.widget.attrs['class'] = 'form-control'
-
+                    
         # Specify the widget for the date field
         self.fields['date'].widget = forms.DateInput(attrs={'class': 'form-control'})
 
@@ -86,7 +86,7 @@ class JoinForm(forms.ModelForm):
             'city' : ('Enter the location of your institute'),
             'email': ('Mention your emailID here'),
             'experience': ('Do you have any prior volunteering experience with any non-profit organization?'),
-            'committed' : ('How many hours can you devote per day?'),
+            'committed' : ('How many hours can you devote per week?'),
             'reasons_for_chapter': ('Why do you want to join YfS?'),
             'introduction': ('Who introduced you to YFS?'),
             'expertise': ('What are your expertise?'),
