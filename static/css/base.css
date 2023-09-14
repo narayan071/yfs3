@@ -497,6 +497,23 @@ h6 {
   color: #fff;
 }
 
+
+/* Custom CSS for mobile view */
+@media (max-width: 768px) {
+  .about {
+    text-align: center !important; /* Center-align content in the container */
+  }
+
+  .video-box {
+    margin: 0 auto !important; /* Center-align the image */
+  }
+  
+  .box-heading {
+    text-align: center !important; /* Center-align the text content */
+  }
+}
+
+
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
@@ -1143,4 +1160,38 @@ footer #copyright {
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
+}
+
+
+
+/* Custom CSS for mobile view */
+@media (max-width: 768px) {
+  /* Adjust margins and padding for sections */
+  #chapterjoin, #all_chapters {
+    margin: 20px;
+  }
+
+  /* Center-align section titles and icons */
+  .about-us-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Center-align card content and make images responsive */
+  .card {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%; /* Make cards take up full width */
+    max-width: none; /* Remove max-width */
+  }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust button width for mobile */
+  .w-btn {
+    width: 100%;
+  }
 }
