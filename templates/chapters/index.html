@@ -1,19 +1,36 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
 
+{% endblock head %}
+<style>
+@media (max-width: 768px) {
+    .card-img-top {
+        max-height: 150px;
+    }
+    .card{
+        min-width: 100% !important;
 
-
+    }
+    .title{
+        text-align: center !important;
+    }
+    section{
+        margin:10px !important;
+    }
+    
+}
+</style>
 {% block content %}
 
 
-<section id="chapterjoin" style="margin:100px;">
-<div class="container">
+<section id="chapterjoin" style="margin-top:100px; margin-bottom: 100px;">
     <div class="about-us-title mb-5 mt-5"  data-aos="flip-up">
         <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
         <h3 class="title" >CREATE/JOIN CHAPTER</h3>
     </div>
     <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-12">
         <div class="card mb-3 shadow" data-aos="fade-right">
             <img src="{% static 'svg/co_working.svg' %}" alt="" class="card-img-top" style="max-height: 200px;">
             <div class="card-header bg-success text-center ">
@@ -30,7 +47,7 @@
         </div>
     </div>
     
-    <div class="col-md-6">
+    <div class="col-md-6 col-12">
         <div class="card mb-3 shadow" data-aos="fade-left">
             <img src="{% static 'svg/interaction_design.svg' %}" alt="" class="card-img-top" style="max-height: 200px;">
             <div class="card-header bg-success text-center ">
@@ -48,7 +65,7 @@
     </div>
     </div>
     
-    <div class="col-md-6 mx-auto">
+    <div class="col-md-6 col-12 mx-auto">
         <div class="card mb-3 shadow" data-aos="fade-up">
             <img src="{% static 'svg/interaction_design.svg' %}" alt="" class="card-img-top" style="max-height: 200px;">
             <div class="card-header bg-success text-center ">
@@ -65,20 +82,18 @@
         </div>
     </div>
     </div>
-</div>
 </section>
 
-<section id="all_chapters" style="margin:100px;">
-    <div class="container">
-        <div class="about-us-title mb-5"  data-aos="flip-up">
+<section id="all_chapters" style="margin-top:100px; margin-bottom:100px;">
+        <div class="about-us-title"  data-aos="flip-up">
             <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
-            <h3 class="title" >CHAPTERS</h3>
+            <h3 class="title text-center" >CHAPTERS</h3>
         </div>
         <div>
             {% for chapter in allchapters %}
             {% if chapter.selected == True %}
             <a href="{% url 'chapterdetails' chapter_id=chapter.id %}" style="text-decoration: none; color: inherit;">
-            <div class="card m-3 shadow" >
+            <div class="card shadow" >
                 <div class="card-header">
                     <h5 class="card-title my-auto">{{ chapter.institution_name }}</h5>
                 </div>
@@ -95,6 +110,5 @@
         {% endif %}
         {% endfor %}
         </div>
-    </div>
 </section>
 {% endblock content %}

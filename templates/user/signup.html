@@ -2,15 +2,30 @@
 {% load static %}
 {% block head %}
 <style>
-    section{
-        
-            background-image: url('{% static 'images/bg/bg2.jpg' %}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            min-height: 100vh; /* Set a minimum height to cover the entire viewport */
-            align-items: center;
-        
+    section {
+        background-image: url('{% static 'images/bg/bg2.jpg' %}');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh;
+        align-items: center;
+    }
+
+    /* Additional CSS for mobile responsiveness */
+    .card {
+        margin: 0px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    body {
+        overflow-x: hidden !important;
+    }
+
+    .card {
+        max-width: 100%; /* Full width on small screens */
     }
 </style>
 {% endblock head %}
@@ -20,7 +35,7 @@
 <section>
     <div class="row">
         <div class="col-md-6 mx-auto">
-            <div class="card shadow " style="margin:100px;"   data-aos="zoom-in">
+            <div class="card shadow" data-aos="zoom-in" style="margin-top: 100px; margin-bottom: 100px;">
                 <div class="card-header bg-success text-white text-center">
                     <h3 class="my-auto fw-bolder">Sign Up</h3>
                 </div>
@@ -34,35 +49,40 @@
                         {% csrf_token %}
                         <div class="mb-1">
                             <label for="">First Name</label>
-                            <input type="text" name = "first_name" class="form-control" required>
+                            <input type="text" name="first_name" class="form-control" required>
                         </div>
                         <div class="mb-1">
                             <label for="">Last Name</label>
-                            <input type="text" name = "last_name" class="form-control" required>
+                            <input type="text" name="last_name" class="form-control" required>
                         </div>
                         <div class="mb-1">
                             <label for="">Username</label>
-                            <input type="text" name = "username" class="form-control" required>
+                            <input type="text" name="username" class="form-control" required>
                         </div>
                         <div class="mb-1">
                             <label for="">Email</label>
-                            <input type="email" name = "email" class="form-control" required>
+                            <input type="email" name="email" class="form-control" required>
                         </div>
                         <div class="mb-1">
                             <label for="">Password</label>
-                            <input type="password" name = "password" class="form-control" required>
+                            <input type="password" name="password" class="form-control" required>
                         </div>
                         <div class="mb-1">
                             <label for="">Confirm Password</label>
-                            <input type="password" name = "password2" class="form-control" required>
+                            <input type="password" name="password2" class="form-control" required>
                         </div>
-                        <div class="mb-1">
-                            <input type="submit" value ="SIGN-UP" class="w-btn w-100">
-                        </div><br><h5 class="text-center">Or</h5><br>
-                        <div class="mb-1 d-flex justify-content-center"> 
-                            <a class="w-btn" href="{% provider_login_url "google" %}?next=/"><span><img src="{% static "images/google-icon.png" %}" style="width:20px" alt=""></span> Sign In with Google</a>
+                        <div class="mb-1 mx-auto">
+                            <input type="submit" value="SIGN-UP" class="w-btn w-100">
                         </div>
-
+                        <br>
+                        <h5 class="text-center">Or</h5>
+                        <br>
+                        <div class="mb-1 d-flex justify-content-center">
+                            <a class="w-btn" href="{% provider_login_url "google" %}?next=/">
+                                <span><img src="{% static "images/google-icon.png" %}" style="width:20px" alt=""></span>
+                                Sign In with Google
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -10,6 +10,12 @@
   color: red;
 }
 
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 14px;
+  }
+}
+
 .success{
   color: green;   
 }
@@ -39,7 +45,7 @@ footer {
  top: 100%;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
   color: rgb(14, 55, 2);
   background: rgb(181, 234, 135);
 }
@@ -49,13 +55,11 @@ footer {
   background: rgb(181, 234, 135);
 }
 
-/* Works on Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: green white;
 }
 
-/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
 }
@@ -73,9 +77,8 @@ body{
     color: #444444;
     scrollbar-width: thin;         
     scrollbar-color: green white;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-}  
-a {
+    overflow-x: hidden; 
+    
   text-decoration: none;
   color: green;
 }
@@ -498,18 +501,18 @@ h6 {
 }
 
 
-/* Custom CSS for mobile view */
 @media (max-width: 768px) {
   .about {
-    text-align: center !important; /* Center-align content in the container */
+    text-align: center !important; 
   }
 
   .video-box {
-    margin: 0 auto !important; /* Center-align the image */
+    margin: 0 auto !important;
   }
   
   .box-heading {
-    text-align: center !important; /* Center-align the text content */
+    text-align: center !important; 
+
   }
 }
 
@@ -803,7 +806,7 @@ footer #socials .social-icons {
   margin-right: 12px;
   -webkit-transition: 0.2s all;
   /* transition: 0.2s all; */
-  transition: 0.2s all; /* Add transition here */
+  transition: 0.2s all; 
   cursor: pointer;
   color: white;
 }
@@ -817,7 +820,6 @@ footer #socials .fa-linkedin:hover {
 }
 
 footer #socials .fa-instagram:hover {
-  /* color: #8a3ab9; */
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -875,7 +877,7 @@ footer #links div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex: 1; /* Distribute equal space among the divs */
+  flex: 1; 
 }
 
 footer #links ul {
@@ -983,7 +985,7 @@ footer #copyright {
   font-weight: lighter;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1500px) {
   footer {
     padding: 1em 1em;
     -ms-grid-columns: 1fr;
@@ -1040,6 +1042,7 @@ footer #copyright {
   border: 2px solid green;
 }
 
+
 .w-btn {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
@@ -1051,9 +1054,21 @@ footer #copyright {
   transition: 0.5s;
   margin-top: 10px;
   border: 2px solid green;
-  color: #000;
+  color: #000000;
   text-decoration: none;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .w-btn{
+    font-size: 17px;
+    letter-spacing: 0px;
+    padding: 4px 14px;
+    
+  }
+  .hero-section{
+    padding: 10px !important;
+}
 }
 
 .w-btn:hover {
@@ -1150,7 +1165,7 @@ footer #copyright {
 
 
 .title{
-  font-size: 20px;
+  font-size: 23px;
   letter-spacing: 1px;
   font-weight: 700;
   padding: 8px 20px;
@@ -1162,27 +1177,56 @@ footer #copyright {
   border-radius: 50px;
 }
 
-
-
-/* Custom CSS for mobile view */
 @media (max-width: 768px) {
-  /* Adjust margins and padding for sections */
+  
+.title{
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  background: #f3f8ec;
+  color: green;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+
+}
+
+@media (max-width: 768px) {
+  /* Remove the carousel control buttons */
+  .carousel-control-prev, .carousel-control-next {
+      display: none;
+  }
+
+  .card {
+      width: 80%;
+      margin: 0 auto;
+  }
+  .para{
+      font-size: 15px !important;
+      line-height: 1rem
+  }
+
+}
+
+
+
+
+@media (max-width: 768px) {
   #chapterjoin, #all_chapters {
     margin: 20px;
   }
 
-  /* Center-align section titles and icons */
   .about-us-title {
     text-align: center;
     margin-bottom: 20px;
   }
 
-  /* Center-align card content and make images responsive */
   .card {
     text-align: center;
     margin-bottom: 20px;
-    width: 100%; /* Make cards take up full width */
-    max-width: none; /* Remove max-width */
+    width: 100%;
+    max-width: none;
   }
 
   .card img {
@@ -1190,8 +1234,5 @@ footer #copyright {
     height: auto;
   }
 
-  /* Adjust button width for mobile */
-  .w-btn {
-    width: 100%;
-  }
+
 }

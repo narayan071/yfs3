@@ -3,17 +3,62 @@
 
 {% block head %}
 <style>
-    section{
-        
-            background-image: url('{% static 'images/bg/bg1.jpg' %}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            min-height: 100vh; /* Set a minimum height to cover the entire viewport */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        
+    section {
+        background-image: url('{% static 'images/bg/bg1.jpg' %}');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-us {
+        padding: 20px;
+    }
+
+    .feedback.card {
+        margin: 0; /* Remove margin for mobile screens */
+        width: 100%; /* Take full width on mobile */
+        border-radius: 0; /* Remove border radius for mobile */
+    }
+
+    .card-header {
+        text-align: center;
+        background-color: #28a745; /* Green background color */
+        color: white;
+        padding: 10px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    /* Add more mobile styles as needed */
+
+    @media (max-width: 768px) {
+        .feedback.container {
+            padding: 0; /* Remove padding on mobile */
+            
+        }
+
+        .feedback.card {
+            padding: 0 !important;
+            margin: 0;
+            border-radius: 0;
+            max-width: 100%;
+        }
+
+        .form-label {
+            font-size: 16px; /* Adjust label font size for mobile */
+        }
+
+        /* Add more specific mobile styles here */
     }
 </style>
 {% endblock head %}
@@ -38,9 +83,8 @@
 {% block content %}
 <section id="contact">
 <center>
-    <br><br><br><br>
-    <div class="contact-us feedback container mt-5">
-        <div class="card rounded shadow col-md-6" style="margin: 3rem" data-aos="flip-up">
+    <div class="contact-us feedback container m-md-5" style="margin-top: 100px !important;">
+        <div class="card rounded shadow col-md-6" data-aos="flip-up">
             <div class="card-header bg-success text-center">
                 <h1 class="display-6 mt-1 text-white">
                     Find more ways to help!
