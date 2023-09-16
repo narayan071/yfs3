@@ -16,10 +16,10 @@ class Feedback(models.Model):
         return str(self.email)
 
 class num_counts(models.Model):
-    trees = models.IntegerField(default = 0)
-    beaches = models.IntegerField(default = 0)
-    projects = models.IntegerField(default = 0)
-    plastic = models.IntegerField(default = 0)
+    trees = models.IntegerField(default = 157)
+    beaches = models.IntegerField(default = 4)
+    projects = models.IntegerField(default = 25)
+    plastic = models.IntegerField(default = 250)
 
 class what_we_do(models.Model):
     name = models.CharField(max_length=100, default=None, null=False)
