@@ -39,7 +39,7 @@
                         <p class="fw-bold">Institution : {{ chapters.institution_name }} </p>
                         <p class="fw-bold">Location : {{ chapters.city }}, {{chapter.state}} </p>
                         <p class="fw-bold">Chapter since : {{ chapters.applied_at }} </p>
-                        <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#edit_chapter">Edit Chapter</button>
+                        {% comment %} <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#edit_chapter">Edit Chapter</button> {% endcomment %}
                         <button class="w-btn"  data-bs-toggle="modal" data-bs-target="#add_event">Add Event</button>
                     {% elif members%}
                         {% for member in members  %}

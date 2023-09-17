@@ -64,7 +64,7 @@ class NewChapterApplication(models.Model):
     website = models.CharField(max_length=200, null=True),
     queries = models.CharField(max_length=800)
     selected = models.BooleanField(default=False)
-    send_email = models.BooleanField(default=False)
+    # send_email = models.BooleanField(default=False)
 
     # def save(self, *args, **kwargs):
     #     if self.send_email == True:
@@ -139,7 +139,7 @@ class JoinChapterApplication(models.Model):
     phone_number = models.CharField(max_length=10)
     email = models.EmailField(max_length=200, primary_key=True, null=False, unique=True)
     selected = models.BooleanField(default=False)
-    send_email = models.BooleanField(default=False)
+    # send_email = models.BooleanField(default=False)
     is_core = models.BooleanField(default=False)
     is_volunteer = models.BooleanField(default=True)
 
@@ -206,7 +206,7 @@ class JoinApplication(models.Model):
     phone_number = models.CharField(max_length=10)
     email = models.EmailField(max_length=200, primary_key=True, null=False, unique=True)
     selected = models.BooleanField(default=False)
-    send_email = models.BooleanField(default=False)
+    # send_email = models.BooleanField(default=False)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
