@@ -27,9 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'f5ff-2409-4089-3e91-406-90d0-bf4d-dd96-5cae.ngrok-free.app',
                  'localhost', '127.0.0.1', '8c5e-2409-4089-2e81-aef3-dbf-7c7-dd8f-22b4.ngrok-free.app',
-                 'localhost', '127.0.0.1', '06a2-2409-4089-2e81-aef3-dbf-7c7-dd8f-22b4.ngrok-free.app',
-                 'localhost', '127.0.0.1', 'ac9a-2409-4089-2e81-aef3-dbf-7c7-dd8f-22b4.ngrok-free.app',
-                 'localhost', '127.0.0.1', '3fd7-2409-4089-2e81-aef3-dbf-7c7-dd8f-22b4.ngrok-free.app',
                  ]
 
 
@@ -108,24 +105,24 @@ WSGI_APPLICATION = 'yfs3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'YFS',
-        'USER': 'root',
-        'PASSWORD': 'pass1111',
-        'HOST': 'localhost',  
-        'PORT': '3306',           
-    }
-}
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'YFS',
+#         'USER': 'root',
+#         'PASSWORD': 'pass1111',
+#         'HOST': 'localhost',  
+#         'PORT': '3306',           
 #     }
 # }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
