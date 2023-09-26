@@ -44,13 +44,14 @@
     <section id="about" class="about">
 
         <div class="row">
-          <div class="col-md-6 col-12 video-box d-flex justify-content-center align-items-stretch">
-            <img src="{% static 'images/natureppl.jpg' %}" style="max-width: 90%; margin-top: 10px; border-radius: 50px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);"  alt="nature people">
+          <div class="col-md-5 col-12 video-box d-flex justify-content-center align-items-stretch">
+            <img src="{% static 'images/natureppl.jpg' %}" style="max-width: 90%; margin-top: 10px; border-radius: 50px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);height:600px"  alt="nature people">
           </div>
 
-          <div class="col-md-6 col-12 d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <div class="col-md-7 col-12 d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <div class="box-heading mx-auto" data-aos="fade-up">
-              <h4 class="title m-4">About us</h4>
+              <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
+              <h4 class="title m-0">About us</h4>
               <h3 class="fw-bold m-4">We help nature smile and survive everywhere</h3>
               <p class="m-4">Seeing the environmental distress around the world, a group of young
                 individuals has come forward to commit to actionable work for the
@@ -176,7 +177,7 @@
     </section><!-- End Counts Section -->
 
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta mb-5" style="background: url('{% static 'images/footer-bg.jpg' %}') top center">
+    <section id="cta" class="cta mb-5" style="background: url('{% static 'images/nature.jpg' %}') top center">
       <div class="container-fluid" data-aos="zoom-in">
 
         <div class="text-center my-auto">
@@ -223,6 +224,7 @@
           </div> {% endcomment %}
         
           <div class="section-title mb-3" data-aos="zoom-in">
+            <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
             <h2 class="title mb-3">WHAT WE DO</h2>
             <h3>We are creating sustainable society, for <span>everyone</span> and <span>forever</span>.</h3>
           </div>
@@ -242,6 +244,105 @@
 
             {% endfor %}
         </div>
+        <div class="section-title">
+          <span><i class="fa-brands fa-2xl fa-pagelines" style="color: #008000;"></i></span>
+          <h2 class="title mb-3">OUR TEAM</h2>
+          <h3 class="m-5"><center><span style="color: orange;">NATIONAL</span> <span class="text-success">TEAM</span></center></h3>
+          <div class="row justify-content-center">
+            <div class="col-md-3 col-6 p-1 ">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/nationalteam/National_coordinator_Manisha_Sahoo.jpg" %}"  class="card-img-top rounded-circle shadow " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Manisha Sahoo</h5>
+                  <p class="card-text text-center "><em>National Coordinator</em></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6   p-1">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/nationalteam/Sanchita_Patra_deputy_National_coordinator.jpg" %}"  class="card-img-top rounded-circle shadow " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Sanchita Patra</h5>
+                  <p class="card-text text-center "><em>Deputy National Coordinator</em></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6   p-1">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/nationalteam/Pratiksha_Pradhan_Social_Media_Manager.jpg" %}"  class="card-img-top rounded-circle shadow " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Pratiksha Pradhan</h5>
+                  <p class="card-text text-center "><em>Social Media Manager</em></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 m p-1">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/nationalteam/Purnima_finance_manager.jpg" %}"  class="card-img-top rounded-circle shadow " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Purnima</h5>
+                  <p class="card-text text-center "><em>Finance Manager</em></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 p-1">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/nationalteam/Neerukonda_satya_venkata_Sai teja_finance_manager.jpg" %}"  class="card-img-top rounded-circle shadow " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">N. V. Sai Teja</h5>
+                  <p class="card-text text-center "><em>Finance Manager</em></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6   p-1">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/nationalteam/Outreach_coordinator_Kotana_Darwish_Babu.jpg" %}"  class="card-img-top rounded-circle shadow " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Kotana Darwish Babu</h5>
+                  <p class="card-text text-center "><em>Outreach Coordinator</em></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6  p-1">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/nationalteam/Outreach_coordinator_GOPARAJU_VENKATA_SESHACHALA_SREE_VATSAVA.jpg" %}"  class="card-img-top  shadow rounded-circle" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">G. V. Shree Vastava</h5>
+                  <p class="card-text text-center "><em>Outreach Coordinator</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="m-5"><center><span class="text-success">DESIGN</span> <span style="color: orange;">TEAM</span></center></h3>
+          <div class="row justify-content-center">
+            <div class="col-md-3 col-6 p-1 ">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/designteam/Armaan_Biswal.jpg" %}"  class="card-img-top  shadow rounded-circle" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Armaan Biswal</h5>
+                  {% comment %} <p class="card-text text-center "><em>National Coordinator</em></p> {% endcomment %}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 p-1 ">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/designteam/Arpita_Pani.jpg" %}"  class="card-img-top  shadow  rounded-circle" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Arpita Pani</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 p-1 ">
+              <div class="card border-0 mx-auto" style="width: 11rem;" style="border">
+                <img src="{% static "images/designteam/Shubhranshu_Das.jpg" %}"  class="card-img-top  shadow rounded-circle" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Shubhranshu Das</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
 
 
       </div>
