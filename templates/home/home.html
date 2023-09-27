@@ -11,31 +11,37 @@
 {% block content %}
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{% static 'images/carousel/slide1.jpg' %}" class="d-block w-100" alt="Slide 1">
-        </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/carousel/slide2.jpg' %}" class="d-block w-100" alt="Slide 2">
-        </div>
-        <div class="carousel-item">
-          <img src="{% static 'images/carousel/slide3.jpg' %}" class="d-block w-100" alt="Slide 3">
+    <div class="row">
+      <div class="col-md-6 col-12 p-0">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/carousel/slide1.jpg' %}" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/carousel/slide2.jpg' %}" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/carousel/slide3.jpg' %}" class="d-block w-100" alt="Slide 3">
+            </div>
+          </div>
         </div>
       </div>
+      <div class="col-md-6 col-12 order-first order-md-last " style="background-color: grey;">
+        <div class="ms-5">
+        <h1 class="text-black" data-aos="fade-left" style="margin-top: 100px;">BE THE CHANGE YOU WANT TO SEE</h1>
+        <a href="{% url 'calculate_carbon_footprint' %}" class="w-btn w-50 m-2">Calculate Carbon Footprint</a><br>
+        <a href="#" class="w-btn w-50 m-2">Donate</a>
+      </div>
+      </div>
     </div>
-    <div class="hero-container" data-aos="fade-up">
-      <h1 class="text">BE THE CHANGE YOU WANT TO SEE</h1>
-      <div class="col-md-4">
-      <a href="{% url 'calculate_carbon_footprint' %}" class="m-2 w-btn text-white btn-primary btn-lg btn-responsive">Calculate Carbon Footprint</a><br>
-      <a href="#" class="m-2  w-btn btn-secondary btn-lg text-white btn-responsive">Donate</a>
-    </div>
-    </div>
+  </div>
+    
   </section>
   
   <main id="main">
