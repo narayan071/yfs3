@@ -24,7 +24,10 @@ def home(request):
 #     return render(request,'home/contact.html',context)
 
 def projects(request):
-    return render(request, "home/projects.html")
+    context = {
+        "pname": "projects",
+    }
+    return render(request, "home/projects.html", context)
 
 def contact(request):
     if request.method == 'POST':
