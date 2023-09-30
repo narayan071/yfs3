@@ -457,7 +457,7 @@ h6 {
 .why-us{
   margin-bottom: 30px;
 }
-.why-us .box {
+.box {
   padding: 50px 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   transition: all ease-in-out 0.3s;
@@ -466,14 +466,13 @@ h6 {
   border-radius: 10px;
 }
 
-.why-us .box span {
+ .box span {
   display: block;
   font-size: 28px;
   font-weight: 700;
   color: green;
 }
-
-.why-us .box h4 {
+.box h4 {
   font-size: 24px;
   font-weight: 600;
   padding: 0;
@@ -481,22 +480,22 @@ h6 {
   color: #353535;
 }
 
-.why-us .box p {
+.box p {
   color: #919191;
   font-size: 15px;
   margin: 0;
   padding: 0;
 }
 
-.why-us .box:hover {
+.box:hover {
   background: green;
   padding: 30px 30px 70px 30px;
   box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
 }
 
-.why-us .box:hover span,
-.why-us .box:hover h6,
-.why-us .box:hover p {
+.box:hover span,
+.box:hover h6,
+.box:hover p {
   color: #fff;
 }
 
@@ -1235,4 +1234,72 @@ footer #copyright {
   }
 
 
+}
+
+
+
+/* PROJECT CSS */
+.box-project {
+  padding: 50px 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Default shadow for all boxes */
+  transition: all ease-in-out 0.3s;
+  height: 250px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.box-project span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #353535; /* Default color for all spans */
+}
+
+.box-project h6 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #353535; /* Default color for all h6 elements */
+}
+
+.box-project p {
+  color: #919191;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the first column (orange) */
+.col-md-4:nth-child(1) .box-project {
+  background-color: orange;
+  box-shadow: -10px 0 20px rgba(0, 0, 0, 0.2); /* More shadow towards the left */
+}
+
+.col-md-4:nth-child(1) .box-project:hover {
+  background: #ffcc80; /* Lighter orange on hover */
+  box-shadow: -20px 0 30px rgba(0, 0, 0, 0.3); /* Increase shadow more towards the left on hover */
+  transform: scale(1.05); /* Increase size on hover */
+  transition-duration: .4s;
+}
+
+/* Style for the third column (green) */
+.col-md-4:nth-child(3) .box-project {
+  background-color: green;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.2); /* More shadow towards the right */
+}
+
+.col-md-4:nth-child(3) .box-project:hover {
+  background: #66ff99; /* Lighter greenish color on hover */
+  box-shadow: 20px 0 30px rgba(0, 0, 0, 0.3); /* Increase shadow more towards the right on hover */
+  transform: scale(1.05); /* Increase size on hover */
+  transition-duration: .4s;
+}
+
+/* Style for the center column (gray) */
+.col-md-4:nth-child(2) .box-project:hover {
+  background: #ddd; /* Lighter gray on hover */
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.3); /* Equal increase in shadow on hover */
+  transform: scale(1.05); /* Increase size on hover */
+  transition-duration: .4s;
 }

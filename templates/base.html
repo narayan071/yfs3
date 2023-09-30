@@ -34,6 +34,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item text-black" href="{% url 'home' %}">Home</a></li>
                   <li><a class="dropdown-item text-black" href="{% url 'home' %}#about">About us</a></li>
+                  <li><a class="dropdown-item text-black" href="{% url 'projects' %}">Projects</a></li>
                   <li><a class="dropdown-item text-black" href="{% url 'home' %}#services">Our work</a></li>
                 </ul>
               </li>
@@ -114,7 +115,7 @@
           <ul class="mx-auto text-center">
             <li class="mx-auto"><a href="{% url 'home' %}#about">About Us</a></li>
             <li class="mx-auto"><a href="{% url 'calculate_carbon_footprint' %}">Carbon footprint</a></li>
-            <li class="mx-auto"><a href="#">Team</a></li>
+            <li class="mx-auto"><a href="{% url "home" %}#team">Team</a></li>
             <li class="mx-auto"><a href="{% url 'home' %}#services">What we do</a></li>
             <li class="mx-auto"><a href="{% url 'contact' %}">Contact</a></li>
           </ul>
@@ -122,7 +123,8 @@
         <div class="more" class="my-3">
           <p class="mx-auto">More</p>
           <ul class="mx-auto">
-            <li class="mx-auto"><a href="{% url 'events' %}">Project</a></li>
+            <li class="mx-auto"><a href="{% url 'events' %}">EVENTS</a></li>
+            <li class="mx-auto"><a href="{% url 'projects' %}">PROJECTS</a></li>
             <li class="mx-auto"><a href="{% url 'events' %}">SESSIONS</a></li>
             <li class="mx-auto"><a href="https://www.tasq.co.in/home">CAREER</a></li>
             <li class="mx-auto"><a href="#">Donate</a></li>

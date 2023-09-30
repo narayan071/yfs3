@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="main">
+    <div class="row p-3" style="margin: 100px;">
+        <div class="col-md-4"  data-aos="fade-right">
+            <div class="box-project m-2 text-center" style="background-color: orange; height: 100vh;">
+                <span><i class="fa-solid fa-leaf" style="color: #17b019;"></i></span>
+                <h6>LEAFLET</h6>
+            </div>
+        </div>
+        <div class="col-md-4"  data-aos="flip-up">
+            <div class="box-project m-2 text-center " style="height: 100vh;">
+                <span><i class="fas fa-utensils"></i></span>
+                <h6>GOOD FOOD PROJECT</h6>
+            </div>
+        </div>
+        <div class="col-md-4"  data-aos="fade-left">
+            <div class="box-project m-2 text-center" style="background-color: green;  height: 100vh;">
+                <span><i class="fa-solid fa-bottle-water fa-2xl" class="shadow" style="color: #e19005;"></i></span>
+                <h6>SINGLE USE PLASTIC PROJECT</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

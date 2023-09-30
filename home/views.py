@@ -23,6 +23,9 @@ def home(request):
 #     }
 #     return render(request,'home/contact.html',context)
 
+def projects(request):
+    return render(request, "home/projects.html")
+
 def contact(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
